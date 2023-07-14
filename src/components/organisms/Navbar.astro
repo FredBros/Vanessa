@@ -1,0 +1,48 @@
+---
+import { Icon } from 'astro-icon'
+import Hamburger from "@/components/molecules/Hamburger.astro"
+---
+
+
+<div class="bg-brand-1 w-full">
+  <div class="container mx-auto px-4">
+    <nav class="flex items-center justify-between h-16">
+      <div class="flex items-center">
+        <a class="text-brand-foreground text-4xl font-inspiration" href="#">Vanessa Brossard
+</a>
+      </div>
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-4 font-semibold">
+          <a class="text-brand-foreground hover:scale-125 hover:text-brand-foreground-hover px-3 py-2 rounded-md" href="#">Accueil</a>
+          <a class="text-brand-foreground hover:scale-125 hover:text-brand-foreground-hover px-3 py-2 rounded-md" href="#">À propos</a>
+          <a class="text-brand-foreground hover:scale-125 hover:text-brand-foreground-hover px-3 py-2 rounded-md" href="#">Services</a>
+          <a class="text-brand-foreground hover:scale-125 hover:text-brand-foreground-hover px-3 py-2 rounded-md" href="#">Contact</a>
+        </div>
+      </div>
+      <div class="md:hidden">
+        <div id="menu-toggle">
+            <Hamburger/>
+        </div>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="md:hidden hidden opacity-0 transition-opacity duration-300 ease-in">
+      <ul class="px-2 pt-2 pb-4 space-y-1 font-semibold">
+        <li><a class="text-brand-foreground block px-3 py-2 rounded-md" href="#">Accueil</a></li>
+        <li><a class="text-brand-foreground block px-3 py-2 rounded-md" href="#">À propos</a></li>
+        <li><a class="text-brand-foreground block px-3 py-2 rounded-md" href="#">Services</a></li>
+        <li><a class="text-brand-foreground block px-3 py-2 rounded-md" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuToggle && menuToggle.addEventListener('click', () => {
+    mobileMenu && mobileMenu.classList.toggle('hidden');
+    mobileMenu && mobileMenu.classList.toggle('opacity-0');
+    menuToggle && menuToggle.classList.toggle('open');
+  });
+</script>

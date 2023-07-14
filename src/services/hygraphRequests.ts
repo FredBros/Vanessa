@@ -8,6 +8,7 @@ export const getHomePageData = async () => {
         homePages(orderBy: publishedAt_ASC, last: 1) {
           hero {
             title
+            subtitle
             heroImage {
               height
               url

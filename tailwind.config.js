@@ -8,6 +8,15 @@ module.exports = {
     "./src/**/*.{ts,tsx,astro}",
   ],
   theme: {
+    colors: {
+      "brand-background": "#fff",
+      "brand-foreground": "#545454",
+      "brand-foreground-hover": "#080808",
+      "brand-1": "#A0EB26",
+      "brand-2": "#FFCD93",
+      "brand-3": "#EC9760",
+      "brand-4": "#B0632F",
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -16,6 +25,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        inspiration: ["Inspiration"],
+        zen: ["Zen Maru Gothic"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
