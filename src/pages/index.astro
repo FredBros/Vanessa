@@ -1,15 +1,22 @@
 ---
 import '@/styles/globals.css'
+import Hero from "@/components/organisms/Hero.astro"
+import type { HeroData } from "@/types/types";
+
 import Layout from '../layouts/Layout.astro';
 import {getHomePageData} from "../services/hygraphRequests"
-const homePageData = await getHomePageData()
+const homePageData:any = await getHomePageData()
+console.log(homePageData.homePages[0].hero.heroImage)
 console.log(homePageData)
+const heroImageData = homePageData.homePages[0].hero.heroImage
+const heroData : HeroData = homePageData.homePages[0].hero
 ---
 
 <Layout title="Vanessa Brossard">
 	<main>
-		<p class="text-lg">hello world</p>
+<Hero data={heroData}/>
 	</main>
+		
 </Layout>
 
 

@@ -13,6 +13,7 @@ module.exports = {
       "brand-foreground": "#545454",
       "brand-foreground-hover": "#080808",
       "brand-1": "#A0EB26",
+      "brand-1-hover": "#80c412",
       "brand-2": "#FFCD93",
       "brand-3": "#EC9760",
       "brand-4": "#B0632F",
