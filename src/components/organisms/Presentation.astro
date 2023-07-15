@@ -1,0 +1,14 @@
+---
+import LayoutSection from "@/layouts/LayoutSections.astro"
+import TitleSection from "../atoms/TitleSection.astro";
+import ContentSection from "../atoms/contentSection.astro";
+type Props={
+    title:string
+    content:string
+}
+const {title, content}= Astro.props
+---
+<LayoutSection>
+<TitleSection title={title} />
+<ContentSection content={content}/>
+</LayoutSection>

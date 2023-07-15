@@ -2,18 +2,17 @@
 import HeroImage from "@/components/molecules/HeroImage.astro";
 import HeroContent from "../molecules/HeroContent.astro";
 import type { HeroData } from "@/types/types";
-import type { HeroImageData } from "@/types/types";
 type Props = {
   data: HeroData;
 };
 const { data } = Astro.props;
 ---
 
-<section id="hero" class="relative w-full h-96 overflow-hidden">
+<div id="hero" class="relative w-full h-96 overflow-hidden">
     <div class="static inset-0 h-full">
-        <HeroImage data={data.heroImage} />
+        <HeroImage data={data.image} />
     </div>
     <HeroContent title={data.title} subtitle={data.subtitle}/>
 
-</section>
+</div>
 

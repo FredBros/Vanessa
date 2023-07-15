@@ -1,0 +1,16 @@
+---
+import SectionBannerTitle from '../atoms/SectionBannerTitle.astro';
+import SectionBannerSubtitle from '../atoms/SectionBannerSubtitle.astro';
+type Props = {
+  title: string
+  subtitle:string
+};
+const {title, subtitle} = Astro.props
+---
+
+<div class="absolute top-0 h-full  w-full sm:max-w-[75%] mx-auto flex flex-col justify-center text-center p-3 py-10 md:p-8 gap-8 lg:gap-6">
+<SectionBannerTitle title={title} />
+<SectionBannerSubtitle subtitle={subtitle}/>
+<div class="mx-auto" >
+</div>
+</div>
