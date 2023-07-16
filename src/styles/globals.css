@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Zen+Maru+Gothic:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Work+Sans:300,400,500");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -80,6 +81,14 @@
 }
 
 body{
-  font-family: 'Zen Maru Gothic', sans-serif;
-  font-weight: 400;  
+  font-family: 'Open Sans', sans-serif;
+
+font-weight: 300;
+  /* font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: 400;   */
+}
+.title{
+  font-family: 'Work Sans', sans-serif;
+
+font-weight: 300;
 }

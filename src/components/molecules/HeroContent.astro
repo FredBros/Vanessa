@@ -1,6 +1,6 @@
 ---
-import HeroTitle from './HeroTitle.astro';
-import HeroSubtitle from './HeroSubtitle.astro';
+import HeroTitle from '../atoms/HeroTitle.astro';
+import HeroSubtitle from '../atoms/HeroSubtitle.astro';
 import ContactButton from '../atoms/ContactButton.astro';
 type Props = {
   title: string
@@ -8,7 +8,7 @@ type Props = {
 };
 const {title, subtitle} = Astro.props
 ---
-<div class="absolute top-0 h-full  w-full sm:max-w-[75%] mx-auto flex flex-col justify-between text-center py-10 p-3 md:p-8  lg:gap-6">
+<div class="absolute top-0 h-full  max-w-screen-md flex flex-col justify-between text-center p-3 md:p-8  lg:gap-6">
 <HeroTitle title={title} />
 <HeroSubtitle subtitle={subtitle}/>
 <div class="mx-auto" >

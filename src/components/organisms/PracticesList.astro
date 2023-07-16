@@ -1,0 +1,19 @@
+---
+import PracticeItem from "./PracticeItem.astro";
+import type { Practice, Image } from "@/types/types"; 
+type Props = {
+    practices: Practice[]
+}
+const {practices}= Astro.props
+const tests=["qewr", "asfdsafa", "azxcbgt"]
+
+---
+<ul>
+   {
+    practices.map((practice)=>(
+<li>
+    <PracticeItem practice={practice}/>
+    </li>
+    ))
+   }
+</ul>

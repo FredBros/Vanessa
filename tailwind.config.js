@@ -29,6 +29,8 @@ module.exports = {
       fontFamily: {
         inspiration: ["Inspiration"],
         zen: ["Zen Maru Gothic"],
+        worksans: ["Work Sans"],
+        opensans: ["Open Sans"],
       },
       colors: {
         border: "hsl(var(--border))",

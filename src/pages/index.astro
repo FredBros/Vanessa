@@ -9,17 +9,14 @@ import Layout from '../layouts/Layout.astro';
 import {getHomePageData, getPractices} from "../services/hygraphRequests"
 const homePageData: HomePageData = await getHomePageData()
 const practicesData: Practice[] = await getPractices()
-const heroImageData = homePageData.hero.image
 const heroData : HeroData = homePageData.hero
-
-
 ---
 
 <Layout title="Vanessa Brossard">
 	<main>
 <Hero data={heroData}/>
 <Presentation title={homePageData.titlePresentation} content={homePageData.contentPresentation}/>
-<PracticesSection data = {practicesData} title={homePageData.practicesSection.title} subtitle={homePageData.practicesSection.subtitle} image={homePageData.practicesSection.image} content={homePageData.practicesPresentation}/>
+<PracticesSection practices = {practicesData} title={homePageData.practicesSection.title} subtitle={homePageData.practicesSection.subtitle} image={homePageData.practicesSection.image} content={homePageData.practicesPresentation}/>
 	</main>
 
 </Layout>

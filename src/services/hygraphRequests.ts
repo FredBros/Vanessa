@@ -4,7 +4,9 @@ const graphqlAPI: string = import.meta.env.GRAPHCMS_ENDPOINT!;
 type ResultHomePages = {
   homePages: HomePages;
 };
-type ResultPractices = Practice[];
+type ResultPractices = {
+  practices: Practice[]
+};
 
 export const getHomePageData = async () => {
   const query = gql`
@@ -35,7 +37,6 @@ export const getHomePageData = async () => {
     }
   `;
   const result: ResultHomePages = await request(graphqlAPI, query);
-  console.log(result)
   return result.homePages[0];
 };
 
@@ -57,6 +58,5 @@ export const getPractices = async () => {
     }
   `;
   const result: ResultPractices = await request(graphqlAPI, query);
-  console.log(result);
-  return result;
+  return result.practices;
 };

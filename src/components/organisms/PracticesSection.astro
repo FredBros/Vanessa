@@ -1,18 +1,21 @@
 ---
 import LayoutSection from "@/layouts/LayoutSections.astro"
 import SectionBanner from "./SectionBanner.astro";
+import PracticesList from "./PracticesList.astro";
 import type { Practice, Image } from "@/types/types"; 
 type Props = {
-    data: Practice[]
+    practices:  Practice[]
     title:string
     subtitle:string
     image:Image
     content:string
 }
-const {data,title,subtitle,image, content}= Astro.props
+const {practices,title,subtitle,image, content}= Astro.props
 ---
 
 <SectionBanner title={title} subtitle={subtitle} image={image}/>
 <LayoutSection>
 <p>{content}</p>
+<PracticesList practices={practices} />
+
 </LayoutSection>
