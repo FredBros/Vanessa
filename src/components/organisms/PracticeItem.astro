@@ -7,6 +7,7 @@ type Props = {
     practice: Practice
 }
 const {practice}= Astro.props
+
 ---
 
 <div class="my-16 max-w-md mx-auto hover:scale-110 rounded-xl hover:shadow-lg transition-all p-6">
@@ -14,7 +15,17 @@ const {practice}= Astro.props
     <div class="flex justify-center">
     <PracticeItemImage image={practice.image[0]} />
     </div>
+    <div data-aos="fade" data-aos-delay= "200" data-aos-offset= "200">
     <PracticeItemLine/>
+    </div>
+    <div data-aos="fade-down" >
     <PracticeItemContent title={practice.title} shortContent= {practice.shortContent}/>
+    </div>
 </a>
 </div>
+
+<script>
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+</script>
