@@ -6,7 +6,7 @@ type Props = {
 }
 const {image}= Astro.props
 ---
-<div class="h-48 rounded-full aspect-square overflow-hidden">
+<div class="h-24 md:h-48 rounded-full aspect-square overflow-hidden">
 <Picture class="object-cover h-full w-full"
 src={image.url}
 widths={[200, 400, 800, 1500]}
