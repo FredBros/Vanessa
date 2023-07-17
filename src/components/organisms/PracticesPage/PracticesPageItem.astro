@@ -1,0 +1,15 @@
+---
+import type {Practice} from "@/types/types"
+import SectionBanner from "@/components/organisms/SectionBanner.astro"
+import PracticeContent from "@/components/molecules/practicesPage/PracticeContent.astro"
+type Props={
+    practice: Practice
+}
+const {practice}= Astro.props
+---
+
+<article id={practice.slug} class="pt-16">
+<SectionBanner title={practice.title} image= {practice.image[0]}/>
+
+<PracticeContent practice={practice}/>
+</article>

@@ -2,7 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import SectionBanner from '@/components/organisms/SectionBanner.astro';
 import LayoutSections from '@/layouts/LayoutSections.astro';
-import PracticesPageList from '@/components/organisms/PracticesPageList.astro';
+import PracticesPageList from '@/components/organisms/PracticesPage/PracticesPageList.astro';
+import ContactButton from '@/components/atoms/ContactButton.astro';
 import {getPractices} from "../services/hygraphRequests"
 import {getPracticesBanner} from "../services/hygraphRequests"
 
@@ -15,6 +16,9 @@ const practicesBannerData: PracticesBanner = await getPracticesBanner()
 <SectionBanner title={practicesBannerData.title} subtitle={practicesBannerData.subtitle} image={practicesBannerData.image} />
 <LayoutSections>
 <PracticesPageList data={practicesData} />
+<div class="flex justify-center">
+<ContactButton/>
+</div>
 </LayoutSections>
         </main>
 

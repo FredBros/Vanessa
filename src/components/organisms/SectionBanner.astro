@@ -5,11 +5,11 @@ import type { Image } from "@/types/types";
 type Props ={
     image:Image
     title:string
-    subtitle:string
+    subtitle?:string
 }
 const {image,title,subtitle}=Astro.props
 ---
-<div class="relative w-full h-40 overflow-hidden flex justify-center ">
+<div class=`relative w-full overflow-hidden flex md:justify-center ${subtitle ? 'h-40' : 'h-20'}` >
     <div class="static inset-0 h-full">
 <SectionBannerImg data={image} />
 </div>

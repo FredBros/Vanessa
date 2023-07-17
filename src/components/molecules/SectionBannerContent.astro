@@ -3,14 +3,16 @@ import SectionBannerTitle from '../atoms/SectionBannerTitle.astro';
 import SectionBannerSubtitle from '../atoms/SectionBannerSubtitle.astro';
 type Props = {
   title: string
-  subtitle:string
+  subtitle?:string
 };
 const {title, subtitle} = Astro.props
 ---
 
-<div class="absolute h-full top-0 max-w-screen-md flex flex-col justify-around text-center md:text-left px-4 md:px-0">
+<div class="absolute h-full top-0 md:w-[768px] flex flex-col justify-around text-center md:text-left px-4 md:px-0">
 <SectionBannerTitle title={title} />
-<SectionBannerSubtitle subtitle={subtitle}/>
+{
+  subtitle ? (<SectionBannerSubtitle subtitle={subtitle}/>) : null
+}
 <div class="mx-auto" >
 </div>
 </div>

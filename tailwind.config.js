@@ -9,6 +9,7 @@ module.exports = {
   ],
   theme: {
     colors: {
+      "white": "#fff",
       "brand-background": "#fff",
       "brand-foreground": "#545454",
       "brand-foreground-hover": "#080808",

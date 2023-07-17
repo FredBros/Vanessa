@@ -1,0 +1,25 @@
+---
+import { Picture } from "@astrojs/image/components";
+import type { Image } from "@/types/types";
+type Props = {
+  image: Image[];
+};
+const { image } = Astro.props;
+---
+
+<div class="flex flex-col gap-2 items-center">
+{
+  image.map((img) => (
+    <div class="h-48 ">
+      <Picture
+        class="object-cover h-full"
+        src={img.url}
+        widths={[200, 400, 800, 1500]}
+        sizes="300px"
+        aspectRatio={img.width / img.height}
+        alt="image de pratique de medecine chinoise"
+      />
+    </div>
+  ))
+}
+</div>

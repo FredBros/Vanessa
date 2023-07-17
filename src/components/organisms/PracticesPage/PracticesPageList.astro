@@ -1,0 +1,13 @@
+---
+import PracticesPageItem from "./PracticesPageItem.astro";
+import type { Practice } from "@/types/types";
+type Props = {
+    data: Practice[]
+}
+const {data} = Astro.props
+---
+<ul>
+{data.map((practice)=>(    
+<PracticesPageItem practice={practice} />
+))}
+</ul>

@@ -1,0 +1,19 @@
+---
+import PracticesParagraph from "@/components/atoms/practicesPage/PracticesParagraph.astro"
+import PracticeImage from "@/components/molecules/practicesPage/PracticeImage.astro"
+import ButtonShadow from "@/components/atoms/ButtonShadow.astro"
+import type { Practice } from "@/types/types"
+type Props = {
+    practice:Practice
+}
+const {practice}=Astro.props
+---
+<div class="flex flex-col md:flex-row gap-3 my-10 " >
+    <div class="md:w-1/2">
+    <PracticesParagraph text={practice.content}/>
+    <div class="mt-3">
+<ButtonShadow link="mailto:brossard_vanessa@yahoo.fr" content="Me contacter"/>
+</div>
+</div>
+<PracticeImage image={practice.image}/>
+</div>

@@ -2,6 +2,7 @@
 import PracticeItemImage from "@/components/atoms/PracticeItemImage.astro"
 import PracticeItemContent from "../molecules/PracticeItemContent.astro";
 import PracticeItemLine from "../atoms/PracticeItemLine.astro";
+import ShowMoreBtn from "../atoms/ButtonShadow.astro";
 import type { Practice } from "@/types/types"; 
 type Props = {
     practice: Practice
@@ -10,7 +11,7 @@ const {practice}= Astro.props
 
 ---
 
-<div class="my-16 max-w-md mx-auto hover:scale-110 rounded-xl hover:shadow-lg transition-all p-4">
+<article class="my-16 max-w-md mx-auto transition-all p-4">
     <a href="#">
     <div class="flex justify-center">
     <PracticeItemImage image={practice.image[0]} />
@@ -21,8 +22,11 @@ const {practice}= Astro.props
     <div data-aos="fade-down" >
     <PracticeItemContent title={practice.title} shortContent= {practice.shortContent}/>
     </div>
-</a>
+<div class="mt-3 flex justify-center" data-aos="fade-down" >
+<ShowMoreBtn content="En savoir plus" link= {`/techniques#${practice.slug}`} />
 </div>
+</a>
+</article>
 
 <script>
 import AOS from 'aos';
