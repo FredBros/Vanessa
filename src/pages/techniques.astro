@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionBanner from '@/components/organisms/SectionBanner.astro';
+import LayoutSections from '@/layouts/LayoutSections.astro';
+import PracticesPageList from '@/components/organisms/PracticesPageList.astro';
+import {getPractices} from "../services/hygraphRequests"
+import {getPracticesBanner} from "../services/hygraphRequests"
+
+import type { Practice, PracticesBanner } from "@/types/types";
+const practicesData: Practice[] = await getPractices()
+const practicesBannerData: PracticesBanner = await getPracticesBanner()
+---
+<Layout title="Vanessa Brossard : Mes techniques">
+	<main>
+<SectionBanner title={practicesBannerData.title} subtitle={practicesBannerData.subtitle} image={practicesBannerData.image} />
+<LayoutSections>
+<PracticesPageList data={practicesData} />
+</LayoutSections>
+        </main>
+
+</Layout>

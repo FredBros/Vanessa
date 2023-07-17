@@ -1,5 +1,10 @@
 import { request, gql } from "graphql-request";
-import type { HomePages, Practice } from "@/types/types.d.ts";
+import type {
+  HomePages,
+  Practice,
+  Image,
+  PracticesBanner,
+} from "@/types/types.d.ts";
 const graphqlAPI: string = import.meta.env.GRAPHCMS_ENDPOINT!;
 type ResultHomePages = {
   homePages: HomePages;
@@ -7,6 +12,11 @@ type ResultHomePages = {
 type ResultPractices = {
   practices: Practice[]
 };
+
+type PracticiesBanner = {
+  homePages: [{ practicesSection: PracticesBanner }];
+};
+
 
 export const getHomePageData = async () => {
   const query = gql`
@@ -59,4 +69,25 @@ export const getPractices = async () => {
   `;
   const result: ResultPractices = await request(graphqlAPI, query);
   return result.practices;
+
 };
+export const getPracticesBanner = async () => {
+  const query = gql`
+    query GetPracticesBanner {
+      homePages {
+        practicesSection {
+          subtitle
+          title
+          image {
+            height
+            url
+            width
+          }
+        }
+      }
+    }
+  `;
+  const result: PracticiesBanner = await request(graphqlAPI, query);
+  return result.homePages[0].practicesSection;
+};
+

@@ -1,4 +1,3 @@
-import { HeroData } from './types.d';
 export type Image = {
   height:number
           url:string
@@ -36,3 +35,10 @@ export type Practice = {
   shortContent:string
   content:string
 };
+
+
+export type PracticesBanner ={
+  subtitle: string
+  title: string
+  image:Image
+}

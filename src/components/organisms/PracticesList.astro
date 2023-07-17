@@ -2,15 +2,14 @@
 import PracticeItem from "./PracticeItem.astro";
 import type { Practice, Image } from "@/types/types"; 
 type Props = {
-    practices: Practice[]
+    data: Practice[]
 }
-const {practices}= Astro.props
-
+const {data}= Astro.props
 
 ---
 <ul>
    {
-    practices.map((practice)=>(
+    data.map((practice)=>(
 <li>
     <PracticeItem practice={practice}/>
     </li>
