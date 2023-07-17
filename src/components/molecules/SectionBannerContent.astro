@@ -8,7 +8,7 @@ type Props = {
 const {title, subtitle} = Astro.props
 ---
 
-<div class="absolute h-full top-0 md:w-[768px] flex flex-col justify-around text-center md:text-left px-4 md:px-0">
+<div class="absolute h-full top-0 md:w-[768px] flex flex-col justify-around text-center md:text-left px-4">
 <SectionBannerTitle title={title} />
 {
   subtitle ? (<SectionBannerSubtitle subtitle={subtitle}/>) : null

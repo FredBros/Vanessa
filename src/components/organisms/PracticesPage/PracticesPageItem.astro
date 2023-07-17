@@ -2,14 +2,18 @@
 import type {Practice} from "@/types/types"
 import SectionBanner from "@/components/organisms/SectionBanner.astro"
 import PracticeContent from "@/components/molecules/practicesPage/PracticeContent.astro"
+import LayoutSections from '@/layouts/LayoutSections.astro';
+
 type Props={
     practice: Practice
 }
 const {practice}= Astro.props
 ---
-
-<article id={practice.slug} class="pt-16">
+<div id={practice.slug} class="-translate-y-16"></div>
+<article class="mt-16">
+    <LayoutSections>
 <SectionBanner title={practice.title} image= {practice.image[0]}/>
 
 <PracticeContent practice={practice}/>
+</LayoutSections>
 </article>

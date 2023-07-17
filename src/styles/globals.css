@@ -4,7 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
- 
+:root {
+  color-scheme: only light;
+} 
+
 @layer base {
   :root {
     --background: 0 0% 100%;

@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     colors: {
       "white": "#fff",
-      "brand-background": "#fff",
+      "brand-background": "#f2f2f2",
       "brand-foreground": "#545454",
       "brand-foreground-hover": "#080808",
       "brand-1": "#A0EB26",
