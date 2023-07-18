@@ -16,7 +16,6 @@ console.log(practices)
 </a>
       </div>
       <div class="hidden md:block flex-none">
-        <!-- <div class="ml-10 flex items-baseline space-x-4"> -->
         <ul class="menu menu-horizontal px-1">
          <li> <a class="hover:text-white hover:bg-brand-1-hover"href="/">Accueil</a></li>
          <li><a class="hover:text-white hover:bg-brand-1-hover"href="#">À propos</a></li> 
@@ -29,9 +28,9 @@ console.log(practices)
           </ul>
             </details>
         </li> 
-         <li> <a  href="#">Les Traitement</a></li> 
-         <li><a href="#">Contact</a></li> 
-        </u>
+         <li> <a class="hover:text-white hover:bg-brand-1-hover" href="#">Les Traitement</a></li> 
+         <li><a class="hover:text-white hover:bg-brand-1-hover" href="#">Contact</a></li> 
+        </ul>
       </div>
       <div class="md:hidden">
         <div id="menu-toggle">
@@ -40,13 +39,28 @@ console.log(practices)
       </div>
     </nav>
     <div id="mobile-menu" class="md:hidden hidden opacity-0 transition-opacity duration-300 ease-in">
-      <ul class="px-2 pt-2 pb-4 space-y-1 font-semibold">
+      <!-- <ul class="px-2 pt-2 pb-4 space-y-1 font-semibold">
         <li><a class="text-brand-foreground block px-3 py-2 " href="#">Accueil</a></li>
         <li><a class="text-brand-foreground block px-3 py-2 " href="#">À propos</a></li>
         <li><a class="text-brand-foreground block px-3 py-2 " href="/techniques">Mes Techniques</a></li>
         <li><a class="text-brand-foreground block px-3 py-2 " href="#">Les Traitement</a></li>
         <li><a class="text-brand-foreground block px-3 py-2 " href="#">Contact</a></li>
-      </ul>
+      </ul> -->
+      <ul class="menu menu-vertical px-1">
+         <li> <a class="hover:text-white hover:bg-brand-1-hover"href="/">Accueil</a></li>
+         <li><a class="hover:text-white hover:bg-brand-1-hover"href="#">À propos</a></li> 
+         <li> 
+            <details><summary class="hover:text-white hover:bg-brand-1-hover" >Mes Techniques</summary>
+<ul class="p-2 bg-brand-1">
+   {practices.map((practice)=>(
+    <li ><a class="hover:text-white hover:bg-brand-1-hover" href=`/techniques#${practice.slug}` >{practice.title}</a></li>
+   ))}
+          </ul>
+            </details>
+        </li> 
+         <li> <a  class="hover:text-white hover:bg-brand-1-hover" href="#">Les Traitement</a></li> 
+         <li><a class="hover:text-white hover:bg-brand-1-hover" href="#">Contact</a></li> 
+        </ul>
     </div>
   </div>
 </div>
