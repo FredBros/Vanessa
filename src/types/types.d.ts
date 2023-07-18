@@ -42,3 +42,11 @@ export type PracticesBanner ={
   title: string
   image:Image
 }
+
+export type NavbarData={
+practices:[{
+  slug:string,
+  title:string
+}
+]
+}

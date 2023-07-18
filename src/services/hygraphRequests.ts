@@ -4,6 +4,7 @@ import type {
   Practice,
   Image,
   PracticesBanner,
+  NavbarData,
 } from "@/types/types.d.ts";
 const graphqlAPI: string = import.meta.env.GRAPHCMS_ENDPOINT!;
 type ResultHomePages = {
@@ -16,7 +17,9 @@ type ResultPractices = {
 type PracticiesBanner = {
   homePages: [{ practicesSection: PracticesBanner }];
 };
-
+// type ResultNavbarData = {
+//   practices: NavbarData;
+// };
 
 export const getHomePageData = async () => {
   const query = gql`
@@ -90,4 +93,19 @@ export const getPracticesBanner = async () => {
   const result: PracticiesBanner = await request(graphqlAPI, query);
   return result.homePages[0].practicesSection;
 };
+
+
+export const getNavbarData = async () => {
+  const query = gql`
+    query GetNavbarData {
+      practices(orderBy: order_ASC) {
+        slug
+        title
+      }
+    }
+  `;
+  const result: NavbarData = await request(graphqlAPI, query);
+  return result;
+};
+
 
