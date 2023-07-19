@@ -1,49 +1,221 @@
 ---
-import Hamburger from "@/components/molecules/Hamburger.astro"
+import Hamburger from "@/components/molecules/Hamburger.astro";
+import type { NavbarData } from "@/types/types";
+import { getNavbarData } from "@/services/hygraphRequests";
+const navbarData: NavbarData = await getNavbarData();
+const { practices } = navbarData;
+console.log(practices);
+
 ---
 
+        <div class=" top-full left-0 right-0 absolute md:relative flex-none self-start md:self-auto md:flex opacity-0 md:opacity-100 items-baseline flex-col md:flex-row md:space-x-4 transition-opacity duration-300 ease-in bg-brand-1 rounded-md hidden py-4 md:p-0 mx-4 md:m-0" id="mobile-menu">
+          <a
+            class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md block"
+            href="/">Accueil</a
+          >
+          <a
+            class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md block"
+            href="#">À propos</a
+          >
+          <div class="relative">
+            <button
+              id="practices-toggle"
+              class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md focus:outline-none"
+            >
+              Mes techniques
+              <svg
+                id="practices-arrow"
+                class="ml-1 h-4 w-4 inline-block transition-transform"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div
+              id="practices-dropdown"
+              class="w-full md:absolute relative hidden z-10 mt-2 bg-brand-1 rounded-md flex-col"
+            >
+            {
+              practices.map((practice)=>(
+                <a
+                href=`/techniques#${practice.slug}`
+                class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md block"
+                >{practice.title}</a
+              >
+              ))
+            }
+              
+            </div>
+          </div>
+          <div class="relative">
+            <button
+              id="treatments-toggle"
+              class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md focus:outline-none"
+            >
+              Traitements
+              <svg
+                id="treatments-arrow"
+                class="ml-1 h-4 w-4 inline-block transition-transform"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div
+              id="treatments-dropdown"
+              class="w-full md:absolute relative z-10 mt-2 bg-brand-1 rounded-md hidden flex-col"
+            >
+              <a
+                href="#"
+                class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md"
+                >Option 1</a>
+              <a
+                href="#"
+                class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md"
+                >Option 2</a>
+              <a
+                href="#"
+                class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md"
+                >Option 3</a>
+            </div>
+          </div>
 
-<div class="bg-brand-1 w-full">
-  <div class="container mx-auto px-4">
-    <nav class="flex items-center justify-between h-16">
-      <div class="flex items-center">
-        <a class="text-brand-4 text-4xl font-inspiration" href="/">Vanessa Brossard
-</a>
-      </div>
-      <div class="hidden md:block">
-        <div class="ml-10 flex items-baseline space-x-4">
-          <a class="text-brand-foreground hover:scale-125 hover:text-brand-foreground-hover px-3 py-2 " href="/">Accueil</a>
-          <a class="text-brand-foreground hover:scale-125 hover:text-brand-foreground-hover px-3 py-2 " href="#">À propos</a>
-          <a class="text-brand-foreground hover:scale-125 hover:text-brand-foreground-hover px-3 py-2 " href="/techniques">Mes Techniques</a>
-          <a class="text-brand-foreground hover:scale-125 hover:text-brand-foreground-hover px-3 py-2 " href="#">Les Traitement</a>
-          <a class="text-brand-foreground hover:scale-125 hover:text-brand-foreground-hover px-3 py-2 " href="#">Contact</a>
+            <a
+              class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md"
+              href="#">Contact</a>
         </div>
-      </div>
-      <div class="md:hidden">
+    
+      <!-- <div class="md:hidden">
         <div id="menu-toggle">
-            <Hamburger/>
+          <Hamburger />
         </div>
-      </div>
+      </div> -->
     </nav>
-    <div id="mobile-menu" class="md:hidden hidden opacity-0 transition-opacity duration-300 ease-in">
+    <!-- <div
+      id="mobile-menu"
+      class="md:hidden hidden opacity-0 transition-opacity duration-300 ease-in"
+    >
       <ul class="px-2 pt-2 pb-4 space-y-1 font-semibold">
-        <li><a class="text-brand-foreground block px-3 py-2 " href="#">Accueil</a></li>
-        <li><a class="text-brand-foreground block px-3 py-2 " href="#">À propos</a></li>
-        <li><a class="text-brand-foreground block px-3 py-2 " href="/techniques">Mes Techniques</a></li>
-        <li><a class="text-brand-foreground block px-3 py-2 " href="#">Les Traitement</a></li>
-        <li><a class="text-brand-foreground block px-3 py-2 " href="#">Contact</a></li>
+        <li>
+          <a class="block px-3 py-2" href="#">Accueil</a>
+        </li>
+        <li>
+          <a class="block px-3 py-2" href="#">À propos</a>
+        </li>
+        <li>
+          <a class="block px-3 py-2" href="/techniques">Mes Techniques</a>
+        </li>
+        <li>
+          <a class="block px-3 py-2" href="#">Les Traitement</a>
+        </li>
+        <li>
+          <a class="block px-3 py-2" href="#">Contact</a>
+        </li>
       </ul>
-    </div>
-  </div>
-</div>
+    </div> -->
+  <!-- </div>
+</div> -->
 
 <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
+  // toggle mobile menu
+  const hamburger = document.getElementById("hamburger");
+  console.log(hamburger)
+  const mobileMenu = document.getElementById("mobile-menu");
 
-  menuToggle && menuToggle.addEventListener('click', () => {
-    mobileMenu && mobileMenu.classList.toggle('hidden');
-    mobileMenu && mobileMenu.classList.toggle('opacity-0');
-    menuToggle && menuToggle.classList.toggle('open');
+  hamburger &&
+    hamburger.addEventListener("click", () => {
+      mobileMenu && mobileMenu.classList.toggle("hidden");
+      mobileMenu && mobileMenu.classList.toggle("flex");
+      hamburger && hamburger.classList.toggle("open");
+      mobileMenu && mobileMenu.classList.toggle("opacity-0");
+    });
+  
+  // toggle dropdowns
+
+  const practicesToggle = document.getElementById("practices-toggle");
+  const practicesDropdown = document.getElementById("practices-dropdown");
+  const treatmentsToggle = document.getElementById("treatments-toggle");
+  const treatmentsDropdown = document.getElementById("treatments-dropdown");
+  const practicesArrow = document.getElementById("practices-arrow");
+  const treatmentsArrow = document.getElementById("treatments-arrow");
+
+
+  document.addEventListener("click", function (event) {
+    if (practicesToggle) {  // non null assertion for Typescript
+      if (
+        event.target !== practicesToggle &&
+        !practicesToggle.contains(event.target as Node)
+      ) {
+        practicesDropdown && practicesDropdown.classList.remove("flex");
+        practicesDropdown && practicesDropdown.classList.add("hidden");
+        practicesArrow && practicesArrow.classList.toggle("transform-none");
+        practicesArrow && practicesArrow.classList.remove("rotate-180");
+        practicesToggle.classList.remove("text-white");
+      }
+    } 
+    if (treatmentsToggle) {   // non null assertion for Typescript
+      if (
+        event.target !== treatmentsToggle &&
+        !treatmentsToggle.contains(event.target as Node)
+      ) {
+        treatmentsDropdown && treatmentsDropdown.classList.remove("flex");
+        treatmentsDropdown && treatmentsDropdown.classList.add("hidden");
+        treatmentsArrow && treatmentsArrow.classList.toggle("transform-none");
+        treatmentsArrow && treatmentsArrow.classList.remove("rotate-180");
+        treatmentsToggle.classList.remove("text-white");
+      }
+    }
+    if(treatmentsToggle && practicesToggle && hamburger)
+    if ((
+        event.target !== treatmentsToggle &&
+        !treatmentsToggle.contains(event.target as Node)
+      ) && (
+        event.target !== practicesToggle &&
+        !practicesToggle.contains(event.target as Node)
+      ) &&
+      (
+        (event.target !== hamburger &&
+        !hamburger.contains(event.target as Node) 
+        )
+        &&
+        (hamburger.classList.contains('open'))
+      )
+      ){
+      mobileMenu && mobileMenu.classList.toggle("hidden");
+      mobileMenu && mobileMenu.classList.toggle("flex");
+      hamburger && hamburger.classList.toggle("open");
+      mobileMenu && mobileMenu.classList.toggle("opacity-0");
+      }
   });
+
+  practicesToggle &&
+    practicesToggle.addEventListener("click", function () {
+      practicesDropdown && practicesDropdown.classList.toggle("hidden");
+      practicesDropdown && practicesDropdown.classList.toggle("flex");
+      practicesDropdown && practicesToggle.classList.toggle("text-white");
+      practicesArrow && practicesArrow.classList.toggle("rotate-180");
+    });
+
+  treatmentsToggle &&
+    treatmentsToggle.addEventListener("click", function () {
+      treatmentsDropdown && treatmentsDropdown.classList.toggle("hidden");
+      treatmentsDropdown && treatmentsDropdown.classList.toggle("flex");
+      treatmentsToggle && treatmentsToggle.classList.toggle("text-white");
+      treatmentsArrow && treatmentsArrow.classList.toggle("rotate-180");
+    });
+
+    
+    
 </script>

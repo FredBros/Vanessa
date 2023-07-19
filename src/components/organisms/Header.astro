@@ -1,7 +1,29 @@
 ---
 import Navbar from "@/components/organisms/Navbar.astro"
-import NavbarDaisy from "@/components/organisms/NavbarDaisy.astro"
+import Hamburger from "@/components/molecules/Hamburger.astro";
+
 ---
 <div class="w-full z-20 fixed">
-<NavbarDaisy/>
+
+<div class="bg-brand-1 w-full text-brand-foreground">
+  <div class="container mx-auto px-4">
+<nav class="flex items-center justify-between h-16">
+<div class="flex items-center">
+        <a class="text-brand-4 text-4xl font-inspiration whitespace-nowrap" href="/"
+          >Vanessa Brossard
+        </a>
+      </div>
+      <!-- <div class="hidden md:block flex-none"> -->
+      
+      <Navbar/>
+      
+      <!-- <div class="self-start md:hidden hidden opacity-0 transition-opacity duration-300 ease-in" id="mobile-menu">
+      <Navbar isMobile={true} />
+      </div> -->
+<div>
+          <Hamburger />
+          </div>
+      </nav>
+  </div>
+  </div>
 </div>
