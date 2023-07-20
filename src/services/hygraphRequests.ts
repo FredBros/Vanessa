@@ -17,9 +17,7 @@ type ResultPractices = {
 type PracticiesBanner = {
   homePages: [{ practicesSection: PracticesBanner }];
 };
-// type ResultNavbarData = {
-//   practices: NavbarData;
-// };
+
 
 export const getHomePageData = async () => {
   const query = gql`
@@ -102,9 +100,14 @@ export const getNavbarData = async () => {
         slug
         title
       }
+      treatments(orderBy: order_ASC) {
+        slug
+        title
+      }
     }
   `;
   const result: NavbarData = await request(graphqlAPI, query);
+
   return result;
 };
 

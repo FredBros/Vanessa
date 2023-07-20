@@ -43,10 +43,17 @@ export type PracticesBanner ={
   image:Image
 }
 
-export type NavbarData={
-practices:[{
-  slug:string,
-  title:string
-}
-]
-}
+export type NavbarData = {
+  practices: [
+    {
+      slug: string;
+      title: string;
+    }
+  ];
+  treatments: [
+    {
+      slug: string;
+      title: string;
+    }
+  ];
+};
