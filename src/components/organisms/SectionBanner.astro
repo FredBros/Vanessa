@@ -9,7 +9,7 @@ type Props ={
 }
 const {image,title,subtitle}=Astro.props
 ---
-<div class=`relative w-full overflow-hidden flex md:justify-center ${subtitle ? 'h-40' : 'h-20'}` >
+<div class=`relative w-full overflow-hidden flex md:justify-center ${subtitle ? 'h-40' : 'h-16 md:h-24'}` >
     <div class="static inset-0 h-full">
 <SectionBannerImg data={image} />
 </div>

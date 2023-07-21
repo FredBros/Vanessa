@@ -1,16 +1,15 @@
 export type Image = {
-  height:number
-          url:string
-          width: number
-}
+  height: number;
+  url: string;
+  width: number;
+};
 
-export type HeroImageData= Image
-    
+export type HeroImageData = Image;
 
 export type HeroData = {
   title: string;
   subtitle: string;
-  image: Image
+  image: Image;
 };
 
 export type HomePageData = {
@@ -22,26 +21,44 @@ export type HomePageData = {
     title: string;
     subtitle: string;
   };
-  practicesPresentation:string;
+  practicesPresentation: string;
+  treatmentsPresentation: string;
+  treatmentsSection: {
+    image: Image;
+    title: string;
+    subtitle: string;
+  };
 };
 
-export type HomePages = HomePageData[]
+export type HomePages = HomePageData[];
 
 export type Practice = {
-  order:number
-  image:Image[]
-  slug:string
-  title:string
-  shortContent:string
-  content:string
+  order: number;
+  image: Image[];
+  slug: string;
+  title: string;
+  shortContent: string;
+  content: string;
 };
 
+export type Treatment = {
+  order: number;
+  image?: Image[];
+  slug: string;
+  title: string;
+  shortContent?: string;
+  content: string;
+  list?: {
+    title?: string;
+    listItem: [string];
+  };
+};
 
-export type PracticesBanner ={
-  subtitle: string
-  title: string
-  image:Image
-}
+export type PracticesBanner = {
+  subtitle: string;
+  title: string;
+  image: Image;
+};
 
 export type NavbarData = {
   practices: [

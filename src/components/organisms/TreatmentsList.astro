@@ -1,0 +1,16 @@
+---
+import TreatmentItem from "./TreatmentItem.astro";
+import type { Treatment } from "@/types/types";
+type Props = {
+  data: Treatment[];
+};
+const { data } = Astro.props;
+---
+
+<div >
+  {
+    data.map((treatment) => (
+        <TreatmentItem treatment={treatment} />
+    ))
+  }
+</div>

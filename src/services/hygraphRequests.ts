@@ -2,6 +2,7 @@ import { request, gql } from "graphql-request";
 import type {
   HomePages,
   Practice,
+  Treatment,
   Image,
   PracticesBanner,
   NavbarData,
@@ -12,6 +13,9 @@ type ResultHomePages = {
 };
 type ResultPractices = {
   practices: Practice[]
+};
+type ResultTreatments = {
+  treatments: Treatment[]
 };
 
 type PracticiesBanner = {
@@ -44,6 +48,16 @@ export const getHomePageData = async () => {
           subtitle
         }
         practicesPresentation
+        treatmentsPresentation
+        treatmentsSection {
+          image {
+            url
+            width
+            height
+          }
+          title
+          subtitle
+        }
       }
     }
   `;
@@ -70,8 +84,34 @@ export const getPractices = async () => {
   `;
   const result: ResultPractices = await request(graphqlAPI, query);
   return result.practices;
+}
 
+
+export const getTreatments = async () => {
+  const query = gql`
+    query GetTreatments {
+      treatments(orderBy: order_ASC) {
+        order
+        image {
+          height
+          url
+          width
+        }
+        slug
+        title
+        content
+        shortContent
+        list {
+          title
+          listItem
+        }
+      }
+    }
+  `;
+  const result: ResultTreatments = await request(graphqlAPI, query);
+  return result.treatments;
 };
+
 export const getPracticesBanner = async () => {
   const query = gql`
     query GetPracticesBanner {

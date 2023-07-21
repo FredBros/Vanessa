@@ -1,0 +1,24 @@
+---
+import ListItemMarker from "@/components/atoms/ListItemMarker.astro"
+type Props = {
+  list: {
+    title?: string;
+    listItem: [string];
+  };
+};
+const { list } = Astro.props;
+---
+
+<div class="my-2">
+  {list.title && <p class="my-2">{list.title}</p>}
+  <ul>
+    {
+      list.listItem.map((item) => (
+        <li class="flex gap-3 my-2">
+            <ListItemMarker/>
+          <p>{item}</p>
+        </li>
+      ))
+    }
+  </ul>
+</div>

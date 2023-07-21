@@ -3,13 +3,15 @@
 import Hero from "@/components/organisms/Hero.astro"
 import Presentation from "@/components/organisms/Presentation.astro"
 import PracticesSection from '@/components/organisms/PracticesSection.astro';
+import TreatmentsSection from "@/components/organisms/TreatmentsSection.astro";
 import MarginBtwSections from "@/components/atoms/MarginBtwSections.astro";
-import type { HeroData, HomePageData, Practice } from "@/types/types";
+import type { HeroData, HomePageData, Practice, Treatment } from "@/types/types";
 
 import Layout from '../layouts/Layout.astro';
-import {getHomePageData, getPractices} from "../services/hygraphRequests"
+import {getHomePageData, getPractices, getTreatments} from "../services/hygraphRequests"
 const homePageData: HomePageData = await getHomePageData()
 const practicesData: Practice[] = await getPractices()
+const treatmentsData: Treatment[] = await getTreatments()
 const heroData : HeroData = homePageData.hero
 ---
 
@@ -19,6 +21,10 @@ const heroData : HeroData = homePageData.hero
 <Presentation title={homePageData.titlePresentation} content={homePageData.contentPresentation}/>
 <MarginBtwSections/>
 <PracticesSection practices = {practicesData} title={homePageData.practicesSection.title} subtitle={homePageData.practicesSection.subtitle} image={homePageData.practicesSection.image} content={homePageData.practicesPresentation}/>
+<MarginBtwSections/>
+<TreatmentsSection treatments = {treatmentsData} title={homePageData.treatmentsSection.title} subtitle={homePageData.treatmentsSection.subtitle} image={homePageData.treatmentsSection.image} content={homePageData.treatmentsPresentation}/>
+
+
 	</main>
 
 </Layout>
