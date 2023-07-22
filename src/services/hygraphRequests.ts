@@ -7,6 +7,7 @@ import type {
   PracticesPageData,
   TreatmentsPageData,
   NavbarData,
+  About
 } from "@/types/types.d.ts";
 const graphqlAPI: string = import.meta.env.GRAPHCMS_ENDPOINT!;
 type ResultHomePages = {
@@ -25,6 +26,9 @@ type ResultPracticesPageData = {
 type ResultTreatmentsPageData = {
   treatmentsPages: [TreatmentsPageData];
 };
+type ResultAbout={
+  abouts: [About]
+}
 
 
 export const getHomePageData = async () => {
@@ -185,3 +189,35 @@ export const getNavbarData = async () => {
 };
 
 
+export const getAboutData = async () => {
+  const query = gql`
+    query GetAbout {
+      abouts(orderBy: publishedAt_ASC, first: 1) {
+        images {
+          height
+          url
+          width
+        }
+        picture {
+          url
+          width
+          height
+        }
+        presentation
+        subtitle
+        shortPresentation
+        bannerImage {
+          height
+          url
+          width
+        }
+        list {
+          title
+          listItem
+        }
+      }
+    }
+  `;
+const result: ResultAbout = await request(graphqlAPI, query);
+return result.abouts[0];
+}

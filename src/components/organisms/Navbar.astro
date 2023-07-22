@@ -4,18 +4,17 @@ import type { NavbarData } from "@/types/types";
 import { getNavbarData } from "@/services/hygraphRequests";
 const navbarData: NavbarData = await getNavbarData();
 const { practices, treatments } = navbarData;
-console.log(navbarData.homePages[0].treatmentsSection.title)
 
 ---
 
-        <div class=" top-full left-0 right-0 absolute md:static flex-none self-start md:self-auto md:flex opacity-0 md:opacity-100 items-baseline flex-col md:flex-row md:space-x-4 transition-opacity duration-300 ease-in bg-brand-1 rounded-b-md hidden py-4 md:p-0 mx-4 md:m-0" id="mobile-menu">
+        <div class=" top-full left-0 right-0 absolute md:static flex-none self-start md:self-auto md:flex opacity-0 md:opacity-100 items-baseline flex-col md:flex-row transition-opacity duration-300 ease-in bg-brand-1 rounded-b-md hidden py-4 md:p-0 mx-4 md:m-0" id="mobile-menu">
           <a
             class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md block"
             href="/">Accueil</a
           >
           <a
             class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md block"
-            href="#">À propos</a
+            href="/about">À propos</a
           >
           <div class="relative w-full md:w-fit">
             <button

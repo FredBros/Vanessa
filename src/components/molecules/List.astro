@@ -11,7 +11,7 @@ const { list } = Astro.props;
 ---
 
 <ul>
-      {list.title && <p class="my-2">{list.title}</p>}
+      {list.title && <p class="my-2 text-lg">{list.title}</p>}
     {
       list.listItem.map((item, index) => (
         <ListItem listItem={item} index={index}/>

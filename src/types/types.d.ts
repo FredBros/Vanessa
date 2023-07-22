@@ -6,6 +6,11 @@ export type Image = {
 
 export type HeroImageData = Image;
 
+export type List={
+  title?: string
+  listItem:[string]
+}
+
 export type HeroData = {
   title: string;
   subtitle: string;
@@ -39,10 +44,7 @@ export type Practice = {
   title: string;
   shortContent: string;
   content: string;
-  list?: {
-    title?: string
-    listItem:[string]
-  }
+  list?: List;
 };
 
 export type Treatment = {
@@ -52,10 +54,7 @@ export type Treatment = {
   title: string;
   shortContent?: string;
   content: string;
-  list?: {
-    title?: string;
-    listItem: [string];
-  };
+  list?: List;
 };
 
 export type PracticesPageData = {
@@ -94,4 +93,14 @@ export type NavbarData = {
       }
     }
   ]
+};
+
+export type About = {
+  images?: [Image];
+  picture?: Image;
+  bannerImage:Image
+  presentation: string;
+  subtitle?: string;
+  shortPresentation: string;
+  list?: List
 };

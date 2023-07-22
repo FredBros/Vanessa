@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactButton from '@/components/atoms/ContactButton.astro';
+import Image from "@/components/molecules/aboutPage/Image.astro"
+import List from '@/components/molecules/List.astro';
+import SectionBanner from '@/components/organisms/SectionBanner.astro';
+import PictureAbout from '@/components/molecules/aboutPage/MainPicture.astro';
+import {getAboutData} from "@/services/hygraphRequests"
+import type {About} from "@/types/types"
+const aboutData:About = await getAboutData()
+---
+<Layout title="Vanessa Brossard : À propos">
+	<main>
+        <SectionBanner image={aboutData.bannerImage} title="À propos"/>
+        <div class="p-4">
+{aboutData.subtitle && <h3 class="text-3xl my-5">{aboutData.subtitle}</h3>}
+{aboutData.picture && <PictureAbout image={aboutData.picture}/>}
+<p class="md:text-lg my-5">{aboutData.presentation}</p>
+{aboutData.list && <div class="my-20 flex justify-center"><List list={aboutData.list}/></div>}
+{aboutData.images && (
+        <div class="flex flex-col md:flex-row gap-5">
+        {aboutData.images.map((img)=>
+                <Image image={img}/>
+                )}
+</div>
+)}
+</div>
+<div class="flex justify-center my-5 md:my-10">
+<ContactButton/>
+</div>
+</main>
+</Layout>
