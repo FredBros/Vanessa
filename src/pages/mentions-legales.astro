@@ -1,0 +1,28 @@
+---
+import StringToMD from "@/components/molecules/StringToMD.astro";
+import SectionBanner from "@/components/organisms/SectionBanner.astro";
+import LayoutSections from "@/layouts/LayoutSections.astro";
+import Layout from "@/layouts/Layout.astro";
+import type { Rules } from "@/types/types";
+import { getRulesData } from "@/services/hygraphRequests";
+const rulesData: Rules = await getRulesData();
+---
+
+<Layout title="Vanessa Brossard :  mentions légales">
+  <main>
+<SectionBanner title="Mentions légales" image={rulesData.bannerImage}/>
+<LayoutSections>
+    <div class="md:text-lg my-5">
+        <div class="my-10">
+    <StringToMD text={rulesData.contactDetails} />
+    </div>
+    <div class="my-10">
+    <StringToMD text={rulesData.hostDetails} />
+    </div>
+    <div class="my-10">
+    <StringToMD text={rulesData.rules} />
+    </div>
+    </div>
+    </LayoutSections>
+  </main>
+</Layout>

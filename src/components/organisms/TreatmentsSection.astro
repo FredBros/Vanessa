@@ -1,4 +1,5 @@
 ---
+import StringToMD from "@/components/molecules/StringToMD.astro";
 import LayoutSection from "@/layouts/LayoutSections.astro"
 import SectionBanner from "./SectionBanner.astro";
 import TreatmentsList from "./TreatmentsList.astro";
@@ -15,6 +16,6 @@ const {treatments,title,subtitle,image, content}= Astro.props
 
 <SectionBanner title={title} subtitle={subtitle} image={image}/>
 <LayoutSection>
-    <p class="p-4">{content}</p>
+   <StringToMD text={content}/>
 <TreatmentsList data={treatments}/>
 </LayoutSection>

@@ -1,8 +1,9 @@
 ---
+import StringToMD from "../molecules/StringToMD.astro";
+
 type Props={
     content:string
 }
 const {content}= Astro.props
 ---
-
-<p>{content}</p>
+    <StringToMD text={content}/>

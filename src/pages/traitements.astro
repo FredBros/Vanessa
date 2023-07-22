@@ -1,4 +1,5 @@
 ---
+import StringToMD from "@/components/molecules/StringToMD.astro";
 import Layout from '../layouts/Layout.astro';
 import LayoutSections from '@/layouts/LayoutSections.astro';
 import SectionBanner from '@/components/organisms/SectionBanner.astro';
@@ -14,7 +15,9 @@ const treatmentsPageData: TreatmentsPageData = await getTreatmentsPageData()
 <main>
     <SectionBanner title={treatmentsPageData.title} subtitle={treatmentsPageData.subtitle} image={treatmentsPageData.imageBanner} />
     <LayoutSections>
-<h3 class="md:text-xl">{treatmentsPageData.description}</h3>
+<div class="md:text-xl">
+<StringToMD text={treatmentsPageData.description}/>
+</div>
 </LayoutSections>
 <TreatmentsPageList data={treatmentsData}/>
 <div class="flex justify-center">

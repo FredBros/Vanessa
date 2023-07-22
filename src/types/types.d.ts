@@ -103,4 +103,12 @@ export type About = {
   subtitle?: string;
   shortPresentation: string;
   list?: List
+  diverse?:string
+};
+
+export type Rules = {
+  rules: string;
+  contactDetails: string;
+  hostDetails: string;
+  bannerImage: Image
 };

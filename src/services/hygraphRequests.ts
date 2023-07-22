@@ -7,7 +7,8 @@ import type {
   PracticesPageData,
   TreatmentsPageData,
   NavbarData,
-  About
+  About,
+  Rules
 } from "@/types/types.d.ts";
 const graphqlAPI: string = import.meta.env.GRAPHCMS_ENDPOINT!;
 type ResultHomePages = {
@@ -29,7 +30,9 @@ type ResultTreatmentsPageData = {
 type ResultAbout={
   abouts: [About]
 }
-
+type ResultRules={
+  legalNotices:[Rules]
+}
 
 export const getHomePageData = async () => {
   const query = gql`
@@ -215,9 +218,29 @@ export const getAboutData = async () => {
           title
           listItem
         }
+        diverse
       }
     }
   `;
 const result: ResultAbout = await request(graphqlAPI, query);
 return result.abouts[0];
+}
+
+export const getRulesData = async () => {
+  const query = gql`
+    query GetRules {
+      legalNotices(orderBy: publishedAt_ASC, first: 1) {
+        rules
+        contactDetails
+        hostDetails
+        bannerImage {
+          height
+          width
+          url
+        }
+      }
+    }
+  `;
+const result: ResultRules = await request(graphqlAPI, query);
+return result.legalNotices[0];
 }

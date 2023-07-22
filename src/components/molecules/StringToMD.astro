@@ -1,0 +1,32 @@
+---
+import { Markdown } from 'astro-remote';
+type Props = {
+    text:string
+}
+const {text} = Astro.props
+---
+<div class="markdown">
+<Markdown content={text} />
+</div>
+
+<style is:inline>
+   .markdown h1{
+        font-size: xx-large;
+        margin: 20px 0;
+    }
+   .markdown h2{
+        font-size: x-large;
+         margin: 20px 0;
+    }
+   .markdown h3{
+        font-size: large;
+         margin: 20px 0;
+    }
+   .markdown p{
+        font-size: inherit;
+    }
+    strong{
+        font-weight: bold;
+       
+    }
+</style>
