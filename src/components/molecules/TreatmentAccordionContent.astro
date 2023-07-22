@@ -1,5 +1,6 @@
 ---
 import ListItemMarker from "@/components/atoms/ListItemMarker.astro"
+import List from "./List.astro";
 type Props = {
   list: {
     title?: string;
@@ -10,7 +11,7 @@ const { list } = Astro.props;
 ---
 
 <div class="my-2">
-  {list.title && <p class="my-2">{list.title}</p>}
+  <!-- {list.title && <p class="my-2">{list.title}</p>}
   <ul>
     {
       list.listItem.map((item) => (
@@ -20,5 +21,6 @@ const { list } = Astro.props;
         </li>
       ))
     }
-  </ul>
+  </ul> -->
+<List list={list}/>
 </div>

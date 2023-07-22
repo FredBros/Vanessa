@@ -1,0 +1,24 @@
+---
+import PracticesParagraph from "@/components/atoms/practicesPage/PracticesParagraph.astro"
+import List from "../List.astro"
+import TreatmentImage from "@/components/molecules/treatmentsPage/TreatmentImage.astro"
+import ButtonShadow from "@/components/atoms/ButtonShadow.astro"
+import type { Treatment } from "@/types/types";
+type Props = {
+    treatment: Treatment
+}
+const {treatment}=Astro.props
+---
+<div class="flex flex-col gap-3 md:justify-between mb-16 mt-4 p-4 bg-white w-full mx-auto max-w-screen-md" >
+    
+    <PracticesParagraph text={treatment.content}/>
+    {treatment.list && (
+        <div class="my-6">
+        <List list={treatment.list}/>
+        </div>)}
+    <div class="mt-3">
+<ButtonShadow link="mailto:brossard_vanessa@yahoo.fr" content="Me contacter"/>
+
+</div>
+{treatment.image && <TreatmentImage image={treatment.image}/>}
+</div>

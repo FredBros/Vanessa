@@ -1,0 +1,13 @@
+---
+import TreatmentsPageItem from "./TreatmentsPageItem.astro";
+import type { Treatment } from "@/types/types";
+type Props = {
+    data: Treatment[]
+}
+const {data} = Astro.props
+---
+<ul>
+{data.map((treatment)=>(    
+<TreatmentsPageItem treatment={treatment} />
+))}
+</ul>

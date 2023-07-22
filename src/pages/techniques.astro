@@ -1,18 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import LayoutSections from '@/layouts/LayoutSections.astro';
 import SectionBanner from '@/components/organisms/SectionBanner.astro';
-import PracticesPageList from '@/components/organisms/PracticesPage/PracticesPageList.astro';
+import PracticesPageList from '@/components/organisms/practicesPage/PracticesPageList.astro'
 import ContactButton from '@/components/atoms/ContactButton.astro';
-import {getPractices} from "../services/hygraphRequests"
-import {getPracticesBanner} from "../services/hygraphRequests"
-
-import type { Practice, PracticesBanner } from "@/types/types";
+import {getPractices, getPracticesPageData} from "../services/hygraphRequests"
+import type { Practice, PracticesPageData } from "@/types/types";
 const practicesData: Practice[] = await getPractices()
-const practicesBannerData: PracticesBanner = await getPracticesBanner()
+const practicesPageData: PracticesPageData = await getPracticesPageData()
 ---
 <Layout title="Vanessa Brossard : Mes techniques">
 	<main>
-<SectionBanner title={practicesBannerData.title} subtitle={practicesBannerData.subtitle} image={practicesBannerData.image} />
+<SectionBanner title={practicesPageData.title} subtitle={practicesPageData.subtitle} image={practicesPageData.imageBanner} />
+<LayoutSections>
+<h3 class="md:text-xl">{practicesPageData.description}</h3>
+</LayoutSections>
 
 <PracticesPageList data={practicesData} />
 <div class="flex justify-center">

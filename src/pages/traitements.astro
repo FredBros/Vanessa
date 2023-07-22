@@ -1,4 +1,24 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import LayoutSections from '@/layouts/LayoutSections.astro';
+import SectionBanner from '@/components/organisms/SectionBanner.astro';
+import TreatmentsPageList from "@/components/organisms/treatmentsPage/TreatmentsPageList.astro"
+import ContactButton from '@/components/atoms/ContactButton.astro';
+import {getTreatmentsPageData, getTreatments} from "@/services/hygraphRequests"
+import type { Treatment, TreatmentsPageData } from "@/types/types";
+const treatmentsData: Treatment[] = await getTreatments()
+const treatmentsPageData: TreatmentsPageData = await getTreatmentsPageData()
 ---
 
-<h1>Page des Traitements</h1>
+<Layout title="Vanessa Brossard : Les traitements">
+<main>
+    <SectionBanner title={treatmentsPageData.title} subtitle={treatmentsPageData.subtitle} image={treatmentsPageData.imageBanner} />
+    <LayoutSections>
+<h3 class="md:text-xl">{treatmentsPageData.description}</h3>
+</LayoutSections>
+<TreatmentsPageList data={treatmentsData}/>
+<div class="flex justify-center">
+<ContactButton/>
+</div>
+</main>
+</Layout>

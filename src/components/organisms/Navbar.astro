@@ -4,6 +4,7 @@ import type { NavbarData } from "@/types/types";
 import { getNavbarData } from "@/services/hygraphRequests";
 const navbarData: NavbarData = await getNavbarData();
 const { practices, treatments } = navbarData;
+console.log(navbarData.homePages[0].treatmentsSection.title)
 
 ---
 
@@ -21,7 +22,7 @@ const { practices, treatments } = navbarData;
               id="practices-toggle"
               class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md focus:outline-none"
             >
-              Mes techniques
+              {navbarData.homePages[0].practicesSection.title}
               <svg
                 id="practices-arrow"
                 class="ml-1 h-4 w-4 inline-block transition-transform"
@@ -49,7 +50,6 @@ const { practices, treatments } = navbarData;
               >
               ))
             }
-              
             </div>
           </div>
           <div class="relative">
@@ -57,7 +57,7 @@ const { practices, treatments } = navbarData;
               id="treatments-toggle"
               class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md focus:outline-none"
             >
-              Traitements
+              {navbarData.homePages[0].treatmentsSection.title}
               <svg
                 id="treatments-arrow"
                 class="ml-1 h-4 w-4 inline-block transition-transform"

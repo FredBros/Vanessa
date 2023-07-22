@@ -1,0 +1,22 @@
+---
+import ListItemMarker from "@/components/atoms/ListItemMarker.astro"
+import ListItem from "../atoms/ListItem.astro";
+type Props = {
+  list: {
+    title?: string;
+    listItem: [string];
+  };
+};
+const { list } = Astro.props;
+---
+
+<ul>
+      {list.title && <p class="my-2">{list.title}</p>}
+    {
+      list.listItem.map((item, index) => (
+        <ListItem listItem={item} index={index}/>
+      ))
+    }
+  </ul>
+
+ 

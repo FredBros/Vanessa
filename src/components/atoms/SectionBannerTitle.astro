@@ -1,8 +1,11 @@
 ---
 type Props = {
-  title: string}
-  const {title}= Astro.props
+  title: string
+color?:string
+}
+  const {title, color}= Astro.props
+  const textColor= color? color : "text-brand-4"
 ---
 
-<h1 class="text-2xl text-brand-4 sm:text-4xl lg:text-5xl font-worksans font-normal">{title}
+<h1 class=`text-2xl ${textColor} sm:text-4xl lg:text-5xl font-worksans font-normal`>{title}
 </h1>

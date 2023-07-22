@@ -4,7 +4,8 @@ import type {
   Practice,
   Treatment,
   Image,
-  PracticesBanner,
+  PracticesPageData,
+  TreatmentsPageData,
   NavbarData,
 } from "@/types/types.d.ts";
 const graphqlAPI: string = import.meta.env.GRAPHCMS_ENDPOINT!;
@@ -18,8 +19,11 @@ type ResultTreatments = {
   treatments: Treatment[]
 };
 
-type PracticiesBanner = {
-  homePages: [{ practicesSection: PracticesBanner }];
+type ResultPracticesPageData = {
+  practicesPages: [PracticesPageData];
+};
+type ResultTreatmentsPageData = {
+  treatmentsPages: [TreatmentsPageData];
 };
 
 
@@ -79,6 +83,10 @@ export const getPractices = async () => {
         title
         content
         shortContent
+        list {
+          title
+          listItem
+        }
       }
     }
   `;
@@ -112,24 +120,41 @@ export const getTreatments = async () => {
   return result.treatments;
 };
 
-export const getPracticesBanner = async () => {
+export const getPracticesPageData = async () => {
   const query = gql`
-    query GetPracticesBanner {
-      homePages {
-        practicesSection {
-          subtitle
-          title
-          image {
-            height
-            url
-            width
-          }
+    query GetPracticesPageData {
+      practicesPages(orderBy: publishedAt_ASC, first: 1) {
+        description
+        imageBanner {
+          height
+          url
+          width
         }
+        subtitle
+        title
       }
     }
   `;
-  const result: PracticiesBanner = await request(graphqlAPI, query);
-  return result.homePages[0].practicesSection;
+  const result: ResultPracticesPageData = await request(graphqlAPI, query);
+  return result.practicesPages[0];
+};
+export const getTreatmentsPageData = async () => {
+  const query = gql`
+    query GetTreatmentsPageData {
+      treatmentsPages(orderBy: publishedAt_ASC, first: 1) {
+        description
+        imageBanner {
+          height
+          width
+          url
+        }
+        subtitle
+        title
+      }
+    }
+  `;
+  const result: ResultTreatmentsPageData = await request(graphqlAPI, query);
+  return result.treatmentsPages[0];
 };
 
 
@@ -143,6 +168,14 @@ export const getNavbarData = async () => {
       treatments(orderBy: order_ASC) {
         slug
         title
+      }
+      homePages(orderBy: publishedAt_ASC, last: 1) {
+        treatmentsSection {
+          title
+        }
+        practicesSection {
+          title
+        }
       }
     }
   `;

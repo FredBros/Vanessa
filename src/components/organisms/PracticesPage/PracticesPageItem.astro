@@ -10,10 +10,8 @@ type Props={
 const {practice}= Astro.props
 ---
 <div id={practice.slug} class="-translate-y-16"></div>
-<article class="mt-16 ">
-    <LayoutSections>
-<SectionBanner title={practice.title} image= {practice.image[0]}/>
-
+<li class="mt-16 ">
+    <SectionBanner title={practice.title} image= {practice.image[0]} color="text-brand-foreground"/>
 <PracticeContent practice={practice}/>
-</LayoutSections>
-</article>
+
+</li>

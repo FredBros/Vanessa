@@ -39,6 +39,10 @@ export type Practice = {
   title: string;
   shortContent: string;
   content: string;
+  list?: {
+    title?: string
+    listItem:[string]
+  }
 };
 
 export type Treatment = {
@@ -54,10 +58,17 @@ export type Treatment = {
   };
 };
 
-export type PracticesBanner = {
+export type PracticesPageData = {
+  description: string
   subtitle: string;
   title: string;
-  image: Image;
+  imageBanner: Image;
+};
+export type TreatmentsPageData = {
+  description: string;
+  subtitle: string;
+  title: string;
+  imageBanner: Image;
 };
 
 export type NavbarData = {
@@ -73,4 +84,14 @@ export type NavbarData = {
       title: string;
     }
   ];
+  homePages:[
+    {
+      treatmentsSection: {
+        title: string
+      }
+      practicesSection :{
+        title: string
+      }
+    }
+  ]
 };

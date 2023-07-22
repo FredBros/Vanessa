@@ -4,12 +4,13 @@ import SectionBannerSubtitle from '../atoms/SectionBannerSubtitle.astro';
 type Props = {
   title: string
   subtitle?:string
+  color?:string
 };
-const {title, subtitle} = Astro.props
+const {title, subtitle, color} = Astro.props
 ---
 
 <div class="absolute h-full top-0 md:w-[768px] flex flex-col justify-around text-center md:text-left px-4">
-<SectionBannerTitle title={title} />
+<SectionBannerTitle title={title} color={color}/>
 {
   subtitle ? (<SectionBannerSubtitle subtitle={subtitle}/>) : null
 }

@@ -1,0 +1,19 @@
+---
+import ListItemMarker from "@/components/atoms/ListItemMarker.astro"
+type Props = {
+    index: number
+    listItem: string;
+  };
+
+const { listItem, index } = Astro.props;
+---
+<li data-aos="fade-right" class="flex gap-3 my-2">
+            <ListItemMarker/>
+          <p>{listItem}</p>
+        </li>
+
+<script>
+  import AOS from "aos";
+  import "aos/dist/aos.css";
+  AOS.init();
+</script>

@@ -1,0 +1,14 @@
+---
+import TreatmentBanner from "./TreatmentBanner.astro";
+import TreatmentContent from '@/components/molecules/treatmentsPage/TreatmentContent.astro'
+import type { Treatment } from "@/types/types";
+type Props = {
+    treatment: Treatment
+}
+const {treatment} = Astro.props
+---
+<div id={treatment.slug} class="-translate-y-16"></div>
+<li>
+   <TreatmentBanner title={treatment.title}/>
+<TreatmentContent treatment={treatment} />
+</li>

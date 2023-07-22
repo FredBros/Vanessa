@@ -1,5 +1,6 @@
 ---
 import PracticesParagraph from "@/components/atoms/practicesPage/PracticesParagraph.astro"
+import List from "../List.astro"
 import PracticeImage from "@/components/molecules/practicesPage/PracticeImage.astro"
 import ButtonShadow from "@/components/atoms/ButtonShadow.astro"
 import type { Practice } from "@/types/types"
@@ -8,9 +9,13 @@ type Props = {
 }
 const {practice}=Astro.props
 ---
-<div class="flex flex-col md:flex-row gap-3 my-10 p-4 bg-white" >
+<div class="flex flex-col md:flex-row gap-3 md:justify-between mb-16 mt-4 p-4 bg-white w-full mx-auto max-w-screen-md" >
     <div class="md:w-1/2">
     <PracticesParagraph text={practice.content}/>
+    {practice.list && (
+        <div class="my-6">
+        <List list={practice.list}/>
+        </div>)}
     <div class="mt-3">
 <ButtonShadow link="mailto:brossard_vanessa@yahoo.fr" content="Me contacter"/>
 </div>
