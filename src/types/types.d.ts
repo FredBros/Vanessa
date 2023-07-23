@@ -103,11 +103,11 @@ export type About = {
   images?: [Image];
   picture?: Image;
   bannerImage:Image
-  presentation: string;
+  presentation: Html;
   subtitle?: string;
   shortPresentation: string;
   list?: List
-  diverse?:string
+  diverse?:Html
 };
 
 export type Rules = {

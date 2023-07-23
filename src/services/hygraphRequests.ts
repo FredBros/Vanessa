@@ -210,7 +210,7 @@ export const getAboutData = async () => {
           width
           height
         }
-        presentation
+        presentation{html}
         subtitle
         shortPresentation
         bannerImage {
@@ -222,7 +222,7 @@ export const getAboutData = async () => {
           title
           listItem
         }
-        diverse
+        diverse{html}
       }
     }
   `;
