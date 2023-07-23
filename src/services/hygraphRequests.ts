@@ -9,7 +9,8 @@ import type {
   NavbarData,
   About,
   Rules,
-  Contact
+  Contact,
+  Footer,
 } from "@/types/types.d.ts";
 const graphqlAPI: string = import.meta.env.GRAPHCMS_ENDPOINT!;
 type ResultHomePages = {
@@ -289,4 +290,25 @@ export const getContact = async () => {
   `;
   const result: ResultContact = await request(graphqlAPI, query);
   return result.contacts[0];
+}
+
+export const getFooter = async () => {
+  const query = gql`
+    query GetFooter {
+      abouts(orderBy: publishedAt_ASC, last: 1) {
+        shortPresentation
+      }
+      homePages(orderBy: publishedAt_ASC, last: 1) {
+        treatmentsSection {
+          title
+        }
+        practicesSection {
+          title
+        }
+      }
+    }
+  `;
+  const result: Footer = await request(graphqlAPI, query);
+  console.log(result)
+  return result
 }

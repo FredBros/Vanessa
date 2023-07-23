@@ -132,3 +132,21 @@ export type Contact = {
   informations: Html;
   list: List;
 };
+
+export type Footer = {
+  abouts: [
+    {
+      shortPresentation: string;
+    }
+  ];
+  homePages: [
+    {
+      treatmentsSection: {
+        title: string;
+      };
+      practicesSection : {
+        title: string;
+      };
+    }
+  ];
+};

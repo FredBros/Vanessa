@@ -1,1 +1,35 @@
-<h1>footer</h1>
+---
+import { getFooter } from "@/services/hygraphRequests";
+import type { Footer } from "@/types/types";
+const data: Footer = await getFooter();
+const shortPresentation: string = data.abouts[0].shortPresentation;
+const treatmantTitle: string = data.homePages[0].treatmentsSection.title;
+const praticeTitle: string = data.homePages[0].practicesSection.title;
+---
+
+<footer class="bg-brand-1">
+  <div class="flex flex-col p-6 max-w-screen-lg mx-auto">
+    <div class="flex flex-col md:flex-row md:gap-28 md:justify-between ">
+      <div class="mb-10 basis-2/3 grow-0">
+        <h4 class="text-xl mb-4">À PROPOS</h4>
+        <p>{shortPresentation}</p>
+      </div>
+      <div class="basis-1/3 grow-1">
+        <h4 class="text-xl mb-4">NAVIGATION</h4>
+        <ul>
+          <li class="my-2"><a href="/">Accueil</a></li>
+          <li class="my-2"><a href="/about">À propos</a></li>
+          <li class="my-2"><a href="/techniques">{praticeTitle}</a></li>
+          <li class="my-2"><a href="/traitements">{treatmantTitle}</a></li>
+          <li class="my-2"><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      coded with ❤️ by <a
+        target="blank"
+        class="underline"
+        href="https://www.fredbrowww.com">Fred Browww</a>
+    </div>
+  </div>
+</footer>
