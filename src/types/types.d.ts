@@ -8,6 +8,12 @@ export type Html = {
   html:string
 }
 
+export type Banner={
+    subtitle: string,
+    title:string
+    image:Image
+}
+
 export type HeroImageData = Image;
 
 export type List={
@@ -115,4 +121,14 @@ export type Rules = {
   contactDetails: Html;
   hostDetails: Html;
   bannerImage: Image;
+};
+
+export type Contact = {
+  address: string;
+  banner: Banner;
+  email: string;
+  gps: string;
+  tel: string;
+  informations: Html;
+  list: List;
 };

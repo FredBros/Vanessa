@@ -8,7 +8,8 @@ import type {
   TreatmentsPageData,
   NavbarData,
   About,
-  Rules
+  Rules,
+  Contact
 } from "@/types/types.d.ts";
 const graphqlAPI: string = import.meta.env.GRAPHCMS_ENDPOINT!;
 type ResultHomePages = {
@@ -32,6 +33,10 @@ type ResultAbout={
 }
 type ResultRules={
   legalNotices:[Rules]
+}
+
+type ResultContact = {
+  contacts:[Contact]
 }
 
 export const getHomePageData = async () => {
@@ -253,4 +258,35 @@ export const getRulesData = async () => {
   `;
 const result: ResultRules = await request(graphqlAPI, query);
 return result.legalNotices[0];
+}
+
+export const getContact = async () => {
+  const query = gql`
+    query GetContact {
+      contacts(orderBy: publishedAt_ASC, first: 1) {
+        address
+        banner {
+          subtitle
+          title
+          image {
+            url
+            width
+            height
+          }
+        }
+        email
+        gps
+        tel
+        informations {
+          html
+        }
+        list {
+          title
+          listItem
+        }
+      }
+    }
+  `;
+  const result: ResultContact = await request(graphqlAPI, query);
+  return result.contacts[0];
 }
