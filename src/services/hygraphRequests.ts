@@ -88,7 +88,9 @@ export const getPractices = async () => {
         }
         slug
         title
-        content
+        content{
+          html
+        }
         shortContent
         list {
           title
@@ -114,7 +116,7 @@ export const getTreatments = async () => {
         }
         slug
         title
-        content
+        content{html}
         shortContent
         list {
           title
@@ -131,7 +133,9 @@ export const getPracticesPageData = async () => {
   const query = gql`
     query GetPracticesPageData {
       practicesPages(orderBy: publishedAt_ASC, first: 1) {
-        description
+        description{
+          html
+          }
         imageBanner {
           height
           url
@@ -149,7 +153,7 @@ export const getTreatmentsPageData = async () => {
   const query = gql`
     query GetTreatmentsPageData {
       treatmentsPages(orderBy: publishedAt_ASC, first: 1) {
-        description
+        description{html}
         imageBanner {
           height
           width
@@ -230,9 +234,15 @@ export const getRulesData = async () => {
   const query = gql`
     query GetRules {
       legalNotices(orderBy: publishedAt_ASC, first: 1) {
-        rules
-        contactDetails
-        hostDetails
+        rules {
+          html
+        }
+        contactDetails {
+          html
+        }
+        hostDetails {
+          html
+        }
         bannerImage {
           height
           width

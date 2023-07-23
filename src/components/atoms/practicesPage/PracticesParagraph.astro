@@ -1,10 +1,8 @@
 ---
-import StringToMD from "@/components/molecules/StringToMD.astro";
-
+import HTMLText from '../HTMLText.astro';
 type Props={
     text:string
 }
 const {text} = Astro.props
 ---
-
-<StringToMD text={text}/>
+<HTMLText text={text}/>

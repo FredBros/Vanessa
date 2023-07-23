@@ -10,7 +10,7 @@ type Props = {
 const { list } = Astro.props;
 ---
 
-<ul>
+<ul class="overflow-hidden">
       {list.title && <p class="my-2 text-lg">{list.title}</p>}
     {
       list.listItem.map((item, index) => (

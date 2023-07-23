@@ -1,5 +1,5 @@
 ---
-import StringToMD from "@/components/molecules/StringToMD.astro";
+import HTMLText from '@/components/atoms/HTMLText.astro';
 import Layout from '../layouts/Layout.astro';
 import LayoutSections from '@/layouts/LayoutSections.astro';
 import SectionBanner from '@/components/organisms/SectionBanner.astro';
@@ -16,7 +16,7 @@ const treatmentsPageData: TreatmentsPageData = await getTreatmentsPageData()
     <SectionBanner title={treatmentsPageData.title} subtitle={treatmentsPageData.subtitle} image={treatmentsPageData.imageBanner} />
     <LayoutSections>
 <div class="md:text-xl">
-<StringToMD text={treatmentsPageData.description}/>
+<HTMLText text={treatmentsPageData.description.html}/>
 </div>
 </LayoutSections>
 <TreatmentsPageList data={treatmentsData}/>

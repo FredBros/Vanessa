@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inspiration&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Work+Sans:300,400,500");
 @tailwind base;
 @tailwind components;
@@ -6,74 +6,74 @@
 
 :root {
   color-scheme: only light;
-} 
+}
 
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
- 
+
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
- 
+
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
- 
+
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
- 
+
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
- 
+
     --primary: 0 0% 9%;
     --primary-foreground: 0 0% 98%;
- 
+
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
- 
+
     --accent: 0 0% 96.1%;
     --accent-foreground: 0 0% 9%;
- 
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
- 
+
     --ring: 0 0% 63.9%;
- 
+
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
- 
+
     --muted: 0 0% 14.9%;
     --muted-foreground: 0 0% 63.9%;
- 
+
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
- 
+
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
- 
+
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
- 
+
     --primary: 0 0% 98%;
     --primary-foreground: 0 0% 9%;
- 
+
     --secondary: 0 0% 14.9%;
     --secondary-foreground: 0 0% 98%;
- 
+
     --accent: 0 0% 14.9%;
     --accent-foreground: 0 0% 98%;
- 
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 85.7% 97.3%;
- 
+
     --ring: 0 0% 14.9%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
@@ -83,19 +83,85 @@
   }
 }
 
-body{
-  font-family: 'Open Sans', sans-serif;  
+body {
+  font-family: "Open Sans", sans-serif;
 
-font-weight: 300;
+  font-weight: 300;
   /* font-family: 'Zen Maru Gothic', sans-serif;
   font-weight: 400;   */
 }
-.title{
-  font-family: 'Work Sans', sans-serif;
+.title {
+  font-family: "Work Sans", sans-serif;
 
-font-weight: 300;
+  font-weight: 300;
 }
 
-h1,h2,h3,h4,h5,h6,p{
-  white-space:pre-line;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  white-space: pre-line;
+}
+
+.html-text h1 {
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.html-text h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.html-text h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.html-text h4 {
+  display: block;
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.html-text h5 {
+  display: block;
+  font-size: 0.83em;
+  margin-top: 1.67em;
+  margin-bottom: 1.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.html-text h6 {
+  display: block;
+  font-size: 0.67em;
+  margin-top: 2.33em;
+  margin-bottom: 2.33em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.html-text p {
+  font-size: 16px;
+}
+.html-text.xl p {
+  font-size: 20px;
 }

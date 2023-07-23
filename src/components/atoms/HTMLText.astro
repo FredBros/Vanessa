@@ -1,0 +1,8 @@
+---
+type Props = {
+  text: string;
+  xl?: boolean;
+};
+const { text, xl } = Astro.props;
+---
+<div set:html={text} class=`html-text${xl ? ' xl' : ''}`></div>

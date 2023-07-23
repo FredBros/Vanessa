@@ -4,6 +4,10 @@ export type Image = {
   width: number;
 };
 
+export type Html = {
+  html:string
+}
+
 export type HeroImageData = Image;
 
 export type List={
@@ -43,7 +47,7 @@ export type Practice = {
   slug: string;
   title: string;
   shortContent: string;
-  content: string;
+  content: Html;
   list?: List;
 };
 
@@ -53,18 +57,18 @@ export type Treatment = {
   slug: string;
   title: string;
   shortContent?: string;
-  content: string;
+  content: Html;
   list?: List;
 };
 
 export type PracticesPageData = {
-  description: string
+  description: Html
   subtitle: string;
   title: string;
-  imageBanner: Image;
+  imageBanner: Image;  
 };
 export type TreatmentsPageData = {
-  description: string;
+  description: Html;
   subtitle: string;
   title: string;
   imageBanner: Image;
@@ -107,8 +111,8 @@ export type About = {
 };
 
 export type Rules = {
-  rules: string;
-  contactDetails: string;
-  hostDetails: string;
-  bannerImage: Image
+  rules: Html;
+  contactDetails: Html;
+  hostDetails: Html;
+  bannerImage: Image;
 };

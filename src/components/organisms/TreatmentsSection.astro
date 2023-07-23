@@ -16,6 +16,6 @@ const {treatments,title,subtitle,image, content}= Astro.props
 
 <SectionBanner title={title} subtitle={subtitle} image={image}/>
 <LayoutSection>
-   <StringToMD text={content}/>
+   <p>{content}</p>
 <TreatmentsList data={treatments}/>
 </LayoutSection>

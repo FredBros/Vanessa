@@ -11,7 +11,7 @@ const {practice}=Astro.props
 ---
 <div class="flex flex-col md:flex-row gap-3 md:justify-between mb-16 mt-4 p-4 bg-white w-full mx-auto max-w-screen-md" >
     <div class="md:w-1/2">
-    <PracticesParagraph text={practice.content}/>
+    <PracticesParagraph text={practice.content.html}/>
     {practice.list && (
         <div class="my-6">
         <List list={practice.list}/>

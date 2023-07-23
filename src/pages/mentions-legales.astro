@@ -1,5 +1,5 @@
 ---
-import StringToMD from "@/components/molecules/StringToMD.astro";
+import HTMLText from "@/components/atoms/HTMLText.astro";
 import SectionBanner from "@/components/organisms/SectionBanner.astro";
 import LayoutSections from "@/layouts/LayoutSections.astro";
 import Layout from "@/layouts/Layout.astro";
@@ -14,13 +14,13 @@ const rulesData: Rules = await getRulesData();
 <LayoutSections>
     <div class="md:text-lg my-5">
         <div class="my-10">
-    <StringToMD text={rulesData.contactDetails} />
+    <HTMLText text={rulesData.contactDetails.html} />
     </div>
     <div class="my-10">
-    <StringToMD text={rulesData.hostDetails} />
+    <HTMLText text={rulesData.hostDetails.html} />
     </div>
     <div class="my-10">
-    <StringToMD text={rulesData.rules} />
+    <HTMLText text={rulesData.rules.html} />
     </div>
     </div>
     </LayoutSections>
