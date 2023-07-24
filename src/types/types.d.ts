@@ -30,7 +30,9 @@ export type HeroData = {
 export type HomePageData = {
   hero: HeroData;
   titlePresentation: string;
-  contentPresentation: string;
+  contentPresentation: {
+    html: string;
+  }
   practicesSection: {
     image: Image;
     title: string;

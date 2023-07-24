@@ -1,7 +1,8 @@
 ---
+import HTMLText from './HTMLText.astro';
 type Props={
     content:string
 }
 const {content}= Astro.props
 ---
-    <p>{content}</p>
+    <HTMLText text={content}/>

@@ -54,7 +54,9 @@ export const getHomePageData = async () => {
           }
         }
         titlePresentation
-        contentPresentation
+        contentPresentation{
+          html
+          }
         practicesSection {
           image {
             height
