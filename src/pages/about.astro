@@ -10,12 +10,11 @@ import PictureAbout from "@/components/molecules/aboutPage/MainPicture.astro";
 import { getAboutData } from "@/services/hygraphRequests";
 import type { About } from "@/types/types";
 const aboutData: About = await getAboutData();
-console.log(aboutData.diverse);
 ---
 
 <Layout title="Vanessa Brossard : À propos">
   <main>
-    <SectionBanner image={aboutData.bannerImage} title="À propos" />
+    <SectionBanner image={aboutData.banner.image} title={aboutData.banner.title} subtitle={aboutData.banner.subtitle}/>
     <LayoutSections>
     <div class="p-4">
       {

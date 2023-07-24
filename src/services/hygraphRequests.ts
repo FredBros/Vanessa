@@ -93,14 +93,23 @@ export const getPractices = async () => {
           width
         }
         slug
-        title
-        content{
+
+        content {
           html
         }
         shortContent
         list {
           title
           listItem
+        }
+        banner {
+          subtitle
+          title
+          image {
+            height
+            url
+            width
+          }
         }
       }
     }
@@ -115,14 +124,24 @@ export const getTreatments = async () => {
     query GetTreatments {
       treatments(orderBy: order_ASC) {
         order
+        banner {
+          image {
+            height
+            width
+            url
+          }
+          subtitle
+          title
+        }
         image {
           height
           url
           width
         }
         slug
-        title
-        content{html}
+        content {
+          html
+        }
         shortContent
         list {
           title
@@ -139,16 +158,18 @@ export const getPracticesPageData = async () => {
   const query = gql`
     query GetPracticesPageData {
       practicesPages(orderBy: publishedAt_ASC, first: 1) {
-        description{
+        description {
           html
-          }
-        imageBanner {
-          height
-          url
-          width
         }
-        subtitle
-        title
+        banner {
+          subtitle
+          title
+          image {
+            height
+            url
+            width
+          }
+        }
       }
     }
   `;
@@ -159,14 +180,18 @@ export const getTreatmentsPageData = async () => {
   const query = gql`
     query GetTreatmentsPageData {
       treatmentsPages(orderBy: publishedAt_ASC, first: 1) {
-        description{html}
-        imageBanner {
-          height
-          width
-          url
+        description {
+          html
         }
-        subtitle
-        title
+        banner {
+          subtitle
+          title
+          image {
+            height
+            url
+            width
+          }
+        }
       }
     }
   `;
@@ -180,11 +205,15 @@ export const getNavbarData = async () => {
     query GetNavbarData {
       practices(orderBy: order_ASC) {
         slug
-        title
+        banner {
+          title
+        }
       }
       treatments(orderBy: order_ASC) {
         slug
-        title
+        banner {
+          title
+        }
       }
       homePages(orderBy: publishedAt_ASC, last: 1) {
         treatmentsSection {
@@ -206,6 +235,15 @@ export const getAboutData = async () => {
   const query = gql`
     query GetAbout {
       abouts(orderBy: publishedAt_ASC, first: 1) {
+        banner {
+          title
+          subtitle
+          image {
+            height
+            url
+            width
+          }
+        }
         images {
           height
           url
@@ -216,19 +254,18 @@ export const getAboutData = async () => {
           width
           height
         }
-        presentation{html}
+        presentation {
+          html
+        }
         subtitle
         shortPresentation
-        bannerImage {
-          height
-          url
-          width
-        }
         list {
           title
           listItem
         }
-        diverse{html}
+        diverse {
+          html
+        }
       }
     }
   `;
@@ -249,10 +286,14 @@ export const getRulesData = async () => {
         hostDetails {
           html
         }
-        bannerImage {
-          height
-          width
-          url
+        banner {
+          title
+          subtitle
+          image {
+            height
+            url
+            width
+          }
         }
       }
     }
@@ -276,7 +317,6 @@ export const getContact = async () => {
           }
         }
         email
-        gps
         tel
         informations {
           html
@@ -309,6 +349,5 @@ export const getFooter = async () => {
     }
   `;
   const result: Footer = await request(graphqlAPI, query);
-  console.log(result)
   return result
 }

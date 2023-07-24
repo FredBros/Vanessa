@@ -10,7 +10,7 @@ const rulesData: Rules = await getRulesData();
 
 <Layout title="Vanessa Brossard :  mentions légales">
   <main>
-<SectionBanner title="Mentions légales" image={rulesData.bannerImage}/>
+<SectionBanner title={rulesData.banner.title} image={rulesData.banner.image} subtitle={rulesData.banner.subtitle}/>
 <LayoutSections>
     <div class="md:text-lg my-5">
         <div class="my-10">

@@ -12,12 +12,12 @@ const contact:Contact = await getContact()
 ---
 
 <Layout title="Vanessa Brossard : contact">
-    <SectionBanner title={contact.banner.title} image={contact.banner.image}/>
+    <SectionBanner title={contact.banner.title} image={contact.banner.image} subtitle={contact.banner.subtitle}/>
 <LayoutSections>
     <div class="flex flex-col gap-5 max-w-xs mx-auto">
     <div class="btn bg-brand-1 hover:bg-brand-1-hover hover:text-white border-none "> <a href=`tel:${contact.tel}`><div class="flex items-center"> <Icon name="fluent:phone-12-regular" class="h-10 " /> {contact.tel}</div></a></div>
     <div class="btn bg-brand-1 hover:bg-brand-1-hover hover:text-white lowercase border-none"> <a href=`mail:${contact.email}`><div class="flex items-center"> <Icon name="fluent:mail-12-regular" class="h-10 " /> {contact.email}</div></a></div>
-    <div class="btn bg-brand-1 hover:bg-brand-1-hover hover:text-white normal-case border-none"> <a  target="_blank" href=`https://www.google.fr/maps/place/${contact.gps}`><div class="flex items-center"> <Icon name="mdi:address-marker-outline" class="h-10 " /> {contact.address}</div></a></div>
+    <div class="btn bg-brand-1 hover:bg-brand-1-hover hover:text-white normal-case border-none"> <a  target="_blank" href=`https://www.google.fr/maps/place/${contact.address}`><div class="flex items-center"> <Icon name="mdi:address-marker-outline" class="h-10 " /> {contact.address}</div></a></div>
     </div>
 <MarginBtwSections/>
 <HTMLText text={contact.informations.html} />

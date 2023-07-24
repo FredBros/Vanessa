@@ -9,9 +9,9 @@ export type Html = {
 }
 
 export type Banner={
-    subtitle: string,
+    subtitle?: string,
     title:string
-    image:Image
+    image?:Image
 }
 
 export type HeroImageData = Image;
@@ -48,86 +48,85 @@ export type HomePageData = {
 export type HomePages = HomePageData[];
 
 export type Practice = {
-  order: number;
+  order?: number;
   image: Image[];
   slug: string;
-  title: string;
   shortContent: string;
   content: Html;
   list?: List;
+  banner:Banner
 };
 
 export type Treatment = {
   order: number;
   image?: Image[];
   slug: string;
-  title: string;
   shortContent?: string;
   content: Html;
   list?: List;
+  banner : Banner
 };
 
 export type PracticesPageData = {
   description: Html
-  subtitle: string;
-  title: string;
-  imageBanner: Image;  
+  banner: Banner
 };
 export type TreatmentsPageData = {
   description: Html;
-  subtitle: string;
-  title: string;
-  imageBanner: Image;
+  banner: Banner;
 };
 
 export type NavbarData = {
   practices: [
     {
       slug: string;
-      title: string;
+      banner: {
+        title: string;
+      };
     }
   ];
   treatments: [
     {
       slug: string;
-      title: string;
+      banner: {
+        title: string;
+      };
     }
   ];
-  homePages:[
+  homePages: [
     {
       treatmentsSection: {
-        title: string
-      }
-      practicesSection :{
-        title: string
-      }
+        title: string;
+      };
+      practicesSection: {
+        title: string;
+      };
     }
-  ]
+  ];
 };
 
 export type About = {
   images?: [Image];
   picture?: Image;
-  bannerImage:Image
   presentation: Html;
   subtitle?: string;
   shortPresentation: string;
   list?: List
   diverse?:Html
+  banner : Banner
 };
 
 export type Rules = {
   rules: Html;
   contactDetails: Html;
   hostDetails: Html;
-  bannerImage: Image;
+  banner: Banner;
 };
 
 export type Contact = {
   address: string;
   banner: Banner;
   email: string;
-  gps: string;
   tel: string;
   informations: Html;
   list: List;

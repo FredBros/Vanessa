@@ -13,7 +13,7 @@ const treatmentsPageData: TreatmentsPageData = await getTreatmentsPageData()
 
 <Layout title="Vanessa Brossard : Les traitements">
 <main>
-    <SectionBanner title={treatmentsPageData.title} subtitle={treatmentsPageData.subtitle} image={treatmentsPageData.imageBanner} />
+    <SectionBanner title={treatmentsPageData.banner.title} subtitle={treatmentsPageData.banner.subtitle} image={treatmentsPageData.banner.image} />
     <LayoutSections>
 <div class="md:text-xl">
 <HTMLText text={treatmentsPageData.description.html}/>

@@ -1,5 +1,5 @@
 ---
-import TreatmentBanner from "./TreatmentBanner.astro";
+import SectionBanner from "../SectionBanner.astro";
 import TreatmentContent from '@/components/molecules/treatmentsPage/TreatmentContent.astro'
 import type { Treatment } from "@/types/types";
 type Props = {
@@ -9,6 +9,6 @@ const {treatment} = Astro.props
 ---
 <div id={treatment.slug} class="-translate-y-16"></div>
 <li>
-   <TreatmentBanner title={treatment.title}/>
+   <SectionBanner subtitle={treatment.banner.subtitle} title={treatment.banner.title} image={treatment.banner.image}/>
 <TreatmentContent treatment={treatment} />
 </li>

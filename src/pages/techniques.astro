@@ -12,7 +12,7 @@ const practicesPageData: PracticesPageData = await getPracticesPageData()
 ---
 <Layout title="Vanessa Brossard : Mes techniques">
 	<main>
-<SectionBanner title={practicesPageData.title} subtitle={practicesPageData.subtitle} image={practicesPageData.imageBanner} />
+<SectionBanner title={practicesPageData.banner.title} subtitle={practicesPageData.banner.subtitle} image={practicesPageData.banner.image} />
 <LayoutSections>
 <HTMLText text={practicesPageData.description.html}/>
 </LayoutSections>

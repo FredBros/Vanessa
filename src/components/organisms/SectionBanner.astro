@@ -3,7 +3,7 @@ import SectionBannerImg from "@/components/molecules/SectionBannerImg.astro"
 import SectionBannerContent from "../molecules/SectionBannerContent.astro";
 import type { Image } from "@/types/types";
 type Props ={
-    image:Image
+    image?:Image
     title:string
     subtitle?:string
     color?:string
@@ -11,8 +11,13 @@ type Props ={
 const {image,title,subtitle, color}=Astro.props
 ---
 <div class=`relative w-full overflow-hidden flex md:justify-center ${subtitle ? 'h-40' : 'h-16 md:h-24'}` >
+
+    
     <div class="static inset-0 h-full">
-<SectionBannerImg data={image} />
+<SectionBannerImg image={image} />
 </div>
-<SectionBannerContent title= {title} subtitle= {subtitle} color={color} />
+
+<!-- <div class="bg-brand-1"> -->
+<SectionBannerContent title= {title} subtitle= {subtitle} color={color}/>
+<!-- </div> -->
 </div>
