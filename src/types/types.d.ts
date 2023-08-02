@@ -64,7 +64,7 @@ export type Treatment = {
   image?: Image[];
   slug: string;
   shortContent?: string;
-  content: Html;
+  content?: Html;
   list?: List;
   banner : Banner
 };
