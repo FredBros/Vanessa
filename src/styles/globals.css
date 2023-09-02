@@ -161,7 +161,12 @@ p {
 }
 .html-text p {
   font-size: 16px;
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
 }
 .html-text.xl p {
   font-size: 20px;
+}
+.html-text strong {
+  font-weight: bold;
 }

@@ -4,5 +4,8 @@ type Props = {
   xl?: boolean;
 };
 const { text, xl } = Astro.props;
+console.log(text)
 ---
+
 <div set:html={text} class=`html-text${xl ? ' xl' : ''}`></div>
+
