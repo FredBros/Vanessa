@@ -1,0 +1,18 @@
+---
+import HeroImage from "@/components/molecules/HeroImage.astro";
+import type { Image } from "@/types/types";
+type Props = {
+  image: Image;
+};
+const { image } = Astro.props;
+---
+
+<div class="bg-brand-4 hidden md:block w-[90%] relative">
+  <div
+    class="absolute left-0 h-4/5 aspect-square bg-transparent border-solid border-4 border-l-0 top-1/2 -translate-y-1/2 -translate-x-[25%]"
+  >
+</div>
+  <div class="absolute  h-[70%] aspect-square -translate-y-1/2 top-1/2 left-0  z-20 -translate-x-[22%]">
+    <HeroImage data={image} />
+  </div>
+</div>
