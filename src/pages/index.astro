@@ -1,6 +1,7 @@
 ---
 
 import Hero from "@/components/organisms/Hero.astro"
+import ContactButton from "@/components/atoms/ContactButton.astro";
 import Presentation from "@/components/organisms/Presentation.astro"
 import PracticesSection from '@/components/organisms/PracticesSection.astro';
 import TreatmentsSection from "@/components/organisms/TreatmentsSection.astro";
@@ -23,6 +24,9 @@ const heroData : HeroData = homePageData.hero
 <PracticesSection practices = {practicesData} title={homePageData.practicesSection.title} subtitle={homePageData.practicesSection.subtitle} image={homePageData.practicesSection.image} content={homePageData.practicesPresentation}/>
 <MarginBtwSections/>
 <TreatmentsSection treatments = {treatmentsData} title={homePageData.treatmentsSection.title} subtitle={homePageData.treatmentsSection.subtitle} image={homePageData.treatmentsSection.image} content={homePageData.treatmentsPresentation}/>
+<section class="flex justify-center">
+<ContactButton/>
+</section>
 
 
 	</main>

@@ -1,0 +1,8 @@
+---
+import { Icon } from 'astro-icon'
+type Props = {
+  email: string; 
+}
+const { email } = Astro.props;
+---
+<div class="btn bg-brand-1 hover:bg-brand-1-hover hover:text-white lowercase border-none"> <a href=`mail:${email}`><div class="flex items-center"> <Icon name="fluent:mail-12-regular" class="h-10 " /> {email}</div></a></div>

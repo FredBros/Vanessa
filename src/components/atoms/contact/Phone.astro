@@ -1,0 +1,9 @@
+---
+import { Icon } from 'astro-icon'
+type Props = {
+  phone: string; 
+}
+const { phone } = Astro.props;
+---
+
+<div class="btn bg-brand-1 hover:bg-brand-1-hover hover:text-white border-none "> <a href=`tel:${phone}`><div class="flex items-center"> <Icon name="fluent:phone-12-regular" class="h-10 " /> {phone}</div></a></div>
