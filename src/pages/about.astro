@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import ContactButton from "@/components/atoms/ContactButton.astro";
 import Image from "@/components/molecules/aboutPage/Image.astro";
 import List from "@/components/molecules/List.astro";
-import SectionBanner from "@/components/organisms/SectionBanner.astro";
+import PageBanner from "@/components/organisms/PageBanner.astro";
 import PictureAbout from "@/components/molecules/aboutPage/MainPicture.astro";
 import { getAboutData } from "@/services/hygraphRequests";
 import type { About } from "@/types/types";
@@ -14,7 +14,7 @@ const aboutData: About = await getAboutData();
 
 <Layout title="Vanessa Brossard : À propos">
   <main>
-    <SectionBanner image={aboutData.banner.image} title={aboutData.banner.title} subtitle={aboutData.banner.subtitle}/>
+    <PageBanner image={aboutData.banner.image} title={aboutData.banner.title} subtitle={aboutData.banner.subtitle}/>
     <LayoutSections>
     <div class="p-4">
       {

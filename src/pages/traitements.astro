@@ -2,7 +2,7 @@
 import HTMLText from '@/components/atoms/HTMLText.astro';
 import Layout from '../layouts/Layout.astro';
 import LayoutSections from '@/layouts/LayoutSections.astro';
-import SectionBanner from '@/components/organisms/SectionBanner.astro';
+import PageBanner from '@/components/organisms/PageBanner.astro';
 import TreatmentsPageList from "@/components/organisms/treatmentsPage/TreatmentsPageList.astro"
 import ContactButton from '@/components/atoms/ContactButton.astro';
 import {getTreatmentsPageData, getTreatments} from "@/services/hygraphRequests"
@@ -13,7 +13,7 @@ const treatmentsPageData: TreatmentsPageData = await getTreatmentsPageData()
 
 <Layout title="Vanessa Brossard : Les traitements">
 <main>
-    <SectionBanner title={treatmentsPageData.banner.title} subtitle={treatmentsPageData.banner.subtitle} image={treatmentsPageData.banner.image} />
+    <PageBanner title={treatmentsPageData.banner.title} subtitle={treatmentsPageData.banner.subtitle} image={treatmentsPageData.banner.image} />
     <LayoutSections>
 <div class="md:text-xl">
 <HTMLText text={treatmentsPageData.description.html}/>

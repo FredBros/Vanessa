@@ -1,6 +1,6 @@
 ---
 import HTMLText from "@/components/atoms/HTMLText.astro";
-import SectionBanner from "@/components/organisms/SectionBanner.astro";
+import PageBanner from "@/components/organisms/PageBanner.astro";
 import LayoutSections from "@/layouts/LayoutSections.astro";
 import Layout from "@/layouts/Layout.astro";
 import type { Rules } from "@/types/types";
@@ -10,7 +10,7 @@ const rulesData: Rules = await getRulesData();
 
 <Layout title="Vanessa Brossard :  mentions légales">
   <main>
-<SectionBanner title={rulesData.banner.title} image={rulesData.banner.image} subtitle={rulesData.banner.subtitle}/>
+<PageBanner title={rulesData.banner.title} image={rulesData.banner.image} subtitle={rulesData.banner.subtitle}/>
 <LayoutSections>
     <div class="md:text-lg my-5">
         <div class="my-10">

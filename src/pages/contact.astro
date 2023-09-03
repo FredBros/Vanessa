@@ -9,13 +9,13 @@ import HTMLText from "@/components/atoms/HTMLText.astro";
 import List from "@/components/molecules/List.astro";
 import Layout from "@/layouts/Layout.astro";
 import LayoutSections from "@/layouts/LayoutSections.astro";
-import SectionBanner from "@/components/organisms/SectionBanner.astro";
+import PageBanner from "@/components/organisms/PageBanner.astro";
 import { getContact } from "@/services/hygraphRequests";
 const contact:Contact = await getContact()
 ---
 
 <Layout title="Vanessa Brossard : contact">
-    <SectionBanner title={contact.banner.title} image={contact.banner.image} subtitle={contact.banner.subtitle}/>
+    <PageBanner title={contact.banner.title} image={contact.banner.image} subtitle={contact.banner.subtitle}/>
 <LayoutSections>
     <div class="flex flex-col gap-5 max-w-xs mx-auto">
     <Phone  phone={contact.tel}/>

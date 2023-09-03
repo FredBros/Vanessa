@@ -2,7 +2,7 @@
 import HTMLText from "@/components/atoms/HTMLText.astro";
 import Layout from '../layouts/Layout.astro';
 import LayoutSections from '@/layouts/LayoutSections.astro';
-import SectionBanner from '@/components/organisms/SectionBanner.astro';
+import PageBanner from '@/components/organisms/PageBanner.astro';
 import PracticesPageList from '@/components/organisms/PracticesPageList.astro'
 import ContactButton from '@/components/atoms/ContactButton.astro';
 import {getPractices, getPracticesPageData} from "../services/hygraphRequests"
@@ -12,7 +12,7 @@ const practicesPageData: PracticesPageData = await getPracticesPageData()
 ---
 <Layout title="Vanessa Brossard : Mes techniques">
 	<main>
-<SectionBanner title={practicesPageData.banner.title} subtitle={practicesPageData.banner.subtitle} image={practicesPageData.banner.image} />
+<PageBanner title={practicesPageData.banner.title} subtitle={practicesPageData.banner.subtitle} image={practicesPageData.banner.image} />
 <LayoutSections>
 <HTMLText text={practicesPageData.description.html}/>
 </LayoutSections>

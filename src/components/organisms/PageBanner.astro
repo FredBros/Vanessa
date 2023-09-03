@@ -1,0 +1,23 @@
+---
+import PageBannerContent from "../molecules/PageBannerContent.astro";
+import PageBannerImg from "../molecules/PageBannerImg.astro";
+import type { Image } from "@/types/types";
+type Props ={
+    image?:Image
+    title:string
+    subtitle?:string
+    color?:string
+}
+const {image,title,subtitle, color}=Astro.props
+---
+<div class=`relative w-full overflow-hidden flex md:justify-center ${subtitle ? 'h-40' : 'h-16 md:h-24'}` >
+
+    
+    <div class="static inset-0 h-full">
+<PageBannerImg image={image} />
+</div>
+
+<!-- <div class="bg-brand-1"> -->
+<PageBannerContent title= {title} subtitle= {subtitle} color={color}/>
+<!-- </div> -->
+</div>
