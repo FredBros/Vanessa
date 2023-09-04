@@ -7,12 +7,10 @@ type Props = {
 const {data}= Astro.props
 
 ---
-<ul>
+<section class="flex flex-wrap gap-4 m-x-auto justify-center">
    {
     data.map((practice)=>(
-<li>
     <PracticeItem practice={practice}/>
-    </li>
     ))
    }
-</ul>
+</section>

@@ -6,7 +6,8 @@ type Props = {
 }
 const {image}= Astro.props
 ---
-<div class="h-24 md:h-48 rounded-full aspect-square overflow-hidden">
+<div class="flex justify-center">
+<div class="h-24 w-24 md:h-32 md:w-32 rounded-full aspect-square overflow-hidden">
 <Picture class="object-cover h-full w-full"
 src={image.url}
 widths={[200, 400, 800, 1500]}
@@ -14,4 +15,5 @@ sizes="300px"
 aspectRatio={image.width/image.height}
 alt="image de pratique de medecine chinoise"
 />
+</div>
 </div>
