@@ -19,11 +19,11 @@ const contact:Contact = await getContact()
 <LayoutSections>
     <div class="flex flex-col gap-5 max-w-xs mx-auto">
     <Phone  phone={contact.tel}/>
-    <Email email={contact.email}/>
+    { contact.email && <Email email={contact.email}/>}
     <Address address={contact.address}/>
     </div>
 <MarginBtwSections/>
-<HTMLText text={contact.informations.html} />
+{contact.informations && <HTMLText text={contact.informations.html} />}
 <MarginBtwSections/>
 {contact.list &&
 <List list={contact.list} />}

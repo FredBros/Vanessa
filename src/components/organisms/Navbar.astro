@@ -7,19 +7,19 @@ const { practices, treatments } = navbarData;
 
 ---
 
-        <div class=" top-full left-0 right-0 absolute md:static flex-none self-start md:self-auto md:flex opacity-0 md:opacity-100 items-baseline flex-col md:flex-row transition-opacity duration-300 ease-in bg-brand-1 rounded-b-md hidden py-4 md:p-0 mx-4 md:m-0" id="mobile-menu">
+        <div class=" top-full left-0 right-0 absolute md:static flex-none self-start md:self-auto md:flex opacity-0 md:opacity-100 items-baseline flex-col md:flex-row transition-opacity duration-300 ease-in bg-navBar-background rounded-b-md hidden py-4 md:p-0 mx-4 md:m-0" id="mobile-menu">
           <a
-            class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md block"
+            class="hover:text-white hover:bg-brand-1 px-2 lg:px-4 py-2 rounded-md block"
             href="/">Accueil</a
           >
           <a
-            class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md block"
+            class="hover:text-white hover:bg-brand-1 px-2 lg:px-4 py-2 rounded-md block"
             href="/about">À propos</a
           >
           <div class="relative w-full md:w-fit">
             <button
               id="practices-toggle"
-              class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md focus:outline-none"
+              class="hover:text-white hover:bg-brand-1 px-2 lg:px-4 py-2 rounded-md focus:outline-none"
             >
               {navbarData.homePages[0].practicesSection.title}
               <svg
@@ -38,13 +38,13 @@ const { practices, treatments } = navbarData;
             </button>
             <div
               id="practices-dropdown"
-              class="w-full md:w-[50vw] md:absolute relative hidden z-10 mt-2 bg-brand-1 rounded-md flex-col border md:border-0"
+              class="w-full md:w-[50vw] md:absolute relative hidden z-10 mt-2 bg-navBar-background rounded-md flex-col border md:border-0"
             >
             {
               practices.map((practice)=>(
                 <a
                 href=`/techniques#${practice.slug}`
-                class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md block"
+                class="hover:text-white hover:bg-brand-1 px-3 py-2 rounded-md block"
                 >{practice.banner.title}</a
               >
               ))
@@ -54,7 +54,7 @@ const { practices, treatments } = navbarData;
           <div class="relative">
             <button
               id="treatments-toggle"
-              class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md focus:outline-none"
+              class="hover:text-white hover:bg-brand-1 px-2 lg:px-4 py-2 rounded-md focus:outline-none"
             >
               {navbarData.homePages[0].treatmentsSection.title}
               <svg
@@ -73,19 +73,19 @@ const { practices, treatments } = navbarData;
             </button>
             <div
               id="treatments-dropdown"
-              class="w-full md:w-[50vw] md:right-0 md:absolute relative z-10 mt-2 bg-brand-1 rounded-md hidden flex-col border md:border-0"
+              class="w-full md:w-[50vw] md:right-0 md:absolute relative z-10 mt-2 bg-navBar-background rounded-md hidden flex-col border md:border-0"
             >
             {treatments.map((treatment) => (
               <a
                 href=`/traitements#${treatment.slug}`
-                class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md"
+                class="hover:text-white hover:bg-brand-1 px-3 py-2 rounded-md"
                 >{treatment.banner.title}</a>
             ))}
             </div>
           </div>
 
             <a
-              class="hover:text-white hover:bg-brand-1-hover px-3 py-2 rounded-md"
+              class="hover:text-white hover:bg-brand-1 px-2 lg:px-4 py-2 rounded-md"
               href="/contact">Contact</a>
         </div>
     

@@ -128,10 +128,10 @@ export type Rules = {
 export type Contact = {
   address: string;
   banner: Banner;
-  email: string;
+  email?: string;
   tel: string;
-  informations: Html;
-  list: List;
+  informations?: Html;
+  list?: List;
 };
 
 export type Footer = {
