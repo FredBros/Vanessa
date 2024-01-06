@@ -309,7 +309,6 @@ export const getContact = async () => {
     query GetContact {
       contacts(orderBy: publishedAt_ASC, first: 1) {
         addresses
-        address
         banner {
           subtitle
           title

@@ -126,8 +126,7 @@ export type Rules = {
 };
 
 export type Contact = {
-  addresses: string[];
-  address: string;
+  addresses: string[];  
   banner: Banner;
   email?: string;
   tel: string;
