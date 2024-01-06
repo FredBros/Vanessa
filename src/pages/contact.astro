@@ -20,7 +20,7 @@ const contact:Contact = await getContact()
     <div class="flex flex-col gap-5 max-w-xs mx-auto">
     <Phone  phone={contact.tel}/>
     { contact.email && <Email email={contact.email}/>}
-    <Address address={contact.address}/>
+    {contact.addresses.map((address)=><Address address={address}/>)}    
     </div>
 <MarginBtwSections/>
 {contact.informations && <HTMLText text={contact.informations.html} />}

@@ -308,6 +308,7 @@ export const getContact = async () => {
   const query = gql`
     query GetContact {
       contacts(orderBy: publishedAt_ASC, first: 1) {
+        addresses
         address
         banner {
           subtitle

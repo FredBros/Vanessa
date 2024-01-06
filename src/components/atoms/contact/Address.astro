@@ -4,5 +4,8 @@ type Props = {
   address: string; 
 }
 const { address } = Astro.props;
+const reg=/[ ,-,,,;]/g;
+const addressQuery = address.replace(reg,"+");
+console.log(addressQuery)
 ---
-<div class="btn bg-brand-1 hover:bg-brand-1-hover hover:text-white normal-case border-none"> <a  target="_blank" href=`https://www.google.fr/maps/place/${address}`><div class="flex items-center"> <Icon name="mdi:address-marker-outline" class="h-10 " /> {address}</div></a></div>
+<div class="btn bg-brand-1 hover:bg-brand-1-hover hover:text-white normal-case border-none"> <a  target="_blank" href=`https://www.google.com/maps/search/?api=1&query=${addressQuery}`><div class="flex items-center"> <Icon name="mdi:address-marker-outline" class="h-10 " />{address}</div></a></div>
